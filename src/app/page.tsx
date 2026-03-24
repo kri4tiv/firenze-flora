@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Suspense } from 'react'
 import Hero from '@/components/sections/Hero'
 import ServiceCards from '@/components/sections/ServiceCards'
 import WorkGrid from '@/components/sections/WorkGrid'
+import StatsStrip from '@/components/sections/StatsStrip'
+import Testimonials from '@/components/sections/Testimonials'
 import EnquireCTA from '@/components/sections/EnquireCTA'
+import { HOME } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Firenze Flora | Wedding & Event Decor in Dubai',
@@ -23,15 +23,16 @@ export default function HomePage() {
         <div className="container-site max-w-3xl">
           <span className="gold-line mb-6" />
           <h2 className="font-display text-display-md text-[#1C1C1A] mb-6">
-            Every celebration deserves to be unforgettable.
+            {HOME.brandStatement}
           </h2>
           <p className="font-body text-base font-light text-[#8C8279] leading-relaxed">
-            We are a Dubai-based floral and event design studio. From intimate proposals to
-            grand wedding receptions, we craft environments that leave a lasting impression.
-            Detail-obsessed. Concept-driven. Built for discerning clients.
+            {HOME.brandBody}
           </p>
         </div>
       </section>
+
+      {/* Stats */}
+      <StatsStrip />
 
       {/* Services */}
       <ServiceCards />
@@ -39,7 +40,10 @@ export default function HomePage() {
       {/* Work Preview */}
       <WorkGrid preview />
 
-      {/* Enquire CTA Strip */}
+      {/* Testimonials */}
+      <Testimonials />
+
+      {/* Enquire CTA */}
       <EnquireCTA />
     </>
   )

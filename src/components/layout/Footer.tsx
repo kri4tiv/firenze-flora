@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { SITE } from '@/lib/content'
 
 const services = [
   { href: '/services/weddings', label: 'Weddings' },
@@ -23,6 +24,7 @@ const legacy = [
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`
 
   return (
     <footer className="bg-[#1C1C1A] text-[#F5F0E8]">
@@ -30,12 +32,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <p className="font-display text-2xl mb-4">Firenze Flora</p>
-            <p className="text-sm text-[#8C8279] font-light leading-relaxed mb-6">
-              Premium floral and event decor studio in Dubai. Bespoke concepts, flawless execution.
+            <p className="font-display text-2xl mb-4">{SITE.name}</p>
+            <p className="text-sm text-[#8C8279] font-light leading-relaxed mb-2">
+              Premium floral and event decor studio in Dubai.
+            </p>
+            <p className="text-xs text-[#8C8279]/70 font-light mb-6">
+              {SITE.addressShort}
             </p>
             <a
-              href="https://wa.me/971000000000?text=Hi%20Firenze%20Flora,%20I%27d%20like%20to%20enquire%20about%20your%20services"
+              href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-[#B8963E] hover:text-[#D4B062] transition-colors"
@@ -83,21 +88,24 @@ export default function Footer() {
           <div>
             <p className="font-accent text-xs tracking-widest text-[#8C8279] mb-5">Contact</p>
             <address className="not-italic space-y-2 text-sm font-light text-[#F5F0E8]/80">
-              <p>Dubai, UAE</p>
-              <a href="tel:+971000000000" className="block hover:text-[#F5F0E8] transition-colors">
-                +971 00 000 0000
-              </a>
+              <p className="text-xs leading-relaxed">{SITE.address}</p>
               <a
-                href="mailto:hello@firenzeflora.com"
+                href={`tel:${SITE.phoneTel}`}
                 className="block hover:text-[#F5F0E8] transition-colors"
               >
-                hello@firenzeflora.com
+                {SITE.phoneDisplay}
+              </a>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="block hover:text-[#F5F0E8] transition-colors"
+              >
+                {SITE.email}
               </a>
             </address>
           </div>
         </div>
 
-        {/* Legacy services (de-emphasized) */}
+        {/* Legacy */}
         <div className="border-t border-white/10 pt-8 mb-8">
           <p className="font-accent text-xs tracking-widest text-[#8C8279]/60 mb-3">Also available</p>
           <div className="flex flex-wrap gap-4">
@@ -116,11 +124,9 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-xs text-[#8C8279]/60">
-            © {year} Firenze Flora. All rights reserved.
+            © {year} {SITE.name}. All rights reserved.
           </p>
-          <p className="text-xs text-[#8C8279]/40">
-            Dubai, United Arab Emirates
-          </p>
+          <p className="text-xs text-[#8C8279]/40">Dubai, United Arab Emirates</p>
         </div>
       </div>
     </footer>

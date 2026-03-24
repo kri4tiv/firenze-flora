@@ -2,8 +2,11 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { SITE } from '@/lib/content'
 
 export default function EnquireCTA() {
+  const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`
+
   return (
     <section className="bg-[#1C1C1A] py-20 md:py-28">
       <div className="container-site text-center">
@@ -20,7 +23,7 @@ export default function EnquireCTA() {
             Ready to create something extraordinary?
           </h2>
           <p className="font-body text-sm font-light text-[#8C8279] mb-10 max-w-md mx-auto leading-relaxed">
-            Tell us your vision, event date, and venue. We'll come back to you within 24 hours.
+            Tell us your vision, event date, and venue. We&apos;ll come back to you within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -30,7 +33,7 @@ export default function EnquireCTA() {
               Start Your Enquiry
             </Link>
             <a
-              href="https://wa.me/971000000000?text=Hi%20Firenze%20Flora"
+              href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border border-white/20 text-white font-body text-sm tracking-widest uppercase hover:border-white/50 transition-colors duration-250"
