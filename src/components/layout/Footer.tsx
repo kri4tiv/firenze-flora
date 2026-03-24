@@ -29,9 +29,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#1C1C1A] text-[#F5F0E8]">
       <div className="container-site section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <p className="font-display text-2xl mb-4">{SITE.name}</p>
             <p className="text-sm text-[#8C8279] font-light leading-relaxed mb-2">
               Premium floral and event decor studio in Dubai.
