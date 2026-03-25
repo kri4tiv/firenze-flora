@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -37,14 +38,10 @@ export default function VenueStrip() {
           className="flex flex-wrap items-center justify-center gap-y-3"
         >
           {venues.map((venue, i) => (
-            <span key={venue} className="flex items-center">
-              <span className="font-accent text-sm md:text-base tracking-widest text-[#F5F0E8]/80 whitespace-nowrap">
-                {venue}
-              </span>
-              {i < venues.length - 1 && (
-                <span className="mx-4 md:mx-6 w-1 h-1 rounded-full bg-[#B8963E] shrink-0" />
-              )}
-            </span>
+            <React.Fragment key={venue}>
+              <span className="font-accent text-sm tracking-widest text-[#F5F0E8]/70 uppercase whitespace-nowrap">{venue}</span>
+              {i < venues.length - 1 && <span className="text-[#B8963E] mx-3 md:mx-4">·</span>}
+            </React.Fragment>
           ))}
         </motion.div>
       </div>

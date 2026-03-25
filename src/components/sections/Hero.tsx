@@ -18,19 +18,6 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
   const fadeOut = useTransform(scrollYProgress, [0, 0.65], [1, 0])
 
-  // Parse headline into staggered words from content
-  const [rawLine1, rawLine2] = HOME.heroHeadline.split('\n')
-  const line1 = rawLine1.split(' ')
-  const line2 = rawLine2.split(' ')
-
-  const wordVariant = (delay: number) => ({
-    hidden: { opacity: 0, y: prefersReduced ? 0 : 32 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.65, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
-    },
-  })
 
   return (
     <section
@@ -116,33 +103,9 @@ export default function Hero() {
           opacity: prefersReduced ? 1 : fadeOut,
         }}
       >
-        <h1 className="font-display text-display-xl text-[#FDFCFA] mb-6 max-w-3xl">
-          <span className="flex flex-wrap gap-x-[0.22em] mb-1">
-            {line1.map((word, i) => (
-              <motion.span
-                key={word}
-                variants={wordVariant(0.3 + i * 0.12)}
-                initial="hidden"
-                animate="show"
-                className="inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </span>
-          <span className="flex flex-wrap gap-x-[0.2em]">
-            {line2.map((word, i) => (
-              <motion.em
-                key={word}
-                variants={wordVariant(0.54 + i * 0.12)}
-                initial="hidden"
-                animate="show"
-                className="inline-block"
-              >
-                {word}
-              </motion.em>
-            ))}
-          </span>
+        <h1 className="font-display text-display-xl text-[#FDFCFA] mb-8 max-w-3xl leading-[1.05]">
+          Where flowers<br />
+          <em>tell your story.</em>
         </h1>
 
         <motion.p

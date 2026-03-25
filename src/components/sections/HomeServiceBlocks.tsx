@@ -101,7 +101,7 @@ export default function HomeServiceBlocks() {
         </div>
 
         {/* Category Tabs */}
-        <div className="flex gap-0 mb-12 border-b border-[#EDE6D8]">
+        <div className="flex gap-2 mb-12 border-b border-[#EDE6D8]">
           {blocks.map((b) => (
             <button
               key={b.slug}
