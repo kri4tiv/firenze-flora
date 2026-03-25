@@ -13,16 +13,44 @@ function StarRating({ rating }: { rating: number }) {
   )
 }
 
-export default function Testimonials() {
+interface TestimonialsProps {
+  dark?: boolean
+}
+
+export default function Testimonials({ dark = false }: TestimonialsProps) {
+  const bg = dark ? 'bg-[#1C1C1A]' : 'bg-[#F5F0E8]'
+  const cardBg = dark ? 'bg-[#2E2E2C]' : 'bg-[#F5F0E8]'
+  const divider = dark ? 'bg-[#3A3A38]' : 'bg-[#EDE6D8]'
+  const quoteColor = dark ? 'text-[#F5F0E8]' : 'text-[#1C1C1A]'
+  const authorColor = dark ? 'text-[#F5F0E8]' : 'text-[#1C1C1A]'
+  const venueColor = 'text-[#8C8279]'
+  const borderColor = dark ? 'border-[#3A3A38]' : 'border-[#EDE6D8]'
+  const headingColor = dark ? 'text-[#F5F0E8]' : 'text-[#1C1C1A]'
+
   return (
-    <section className="section-padding bg-[#F5F0E8]">
+    <section className={`section-padding ${bg}`}>
       <div className="container-site">
         <div className="mb-12">
           <span className="gold-line mb-4" />
-          <h2 className="font-display text-display-md text-[#1C1C1A]">What our clients say</h2>
+          {dark ? (
+            <>
+              <p className="font-accent text-xs tracking-[0.2em] text-[#8C8279] uppercase mb-3">
+                Our Clients
+              </p>
+              <h2 className={`font-display text-display-md ${headingColor} mb-3`}>
+                Our Top Cherished Clients: The Heart of Our Success
+              </h2>
+              <p className="font-body text-sm font-light text-[#8C8279] max-w-2xl leading-relaxed">
+                A symphony of success stories: each client we&apos;ve had the privilege to serve has
+                contributed to our journey, enriching it with their unique stories, visions, and aspirations.
+              </p>
+            </>
+          ) : (
+            <h2 className={`font-display text-display-md ${headingColor}`}>What our clients say</h2>
+          )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EDE6D8]">
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-px ${divider}`}>
           {TESTIMONIALS.map((t, i) => (
             <motion.div
               key={t.id}
@@ -30,17 +58,17 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.55, delay: i * 0.13, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="bg-[#F5F0E8] p-8 md:p-10 flex flex-col"
+              className={`${cardBg} p-8 md:p-10 flex flex-col`}
             >
               <StarRating rating={t.rating} />
 
-              <blockquote className="font-display text-lg md:text-xl italic text-[#1C1C1A] leading-snug flex-1 mb-8">
+              <blockquote className={`font-display text-lg md:text-xl italic ${quoteColor} leading-snug flex-1 mb-8`}>
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 
-              <div className="border-t border-[#EDE6D8] pt-5">
-                <p className="font-body text-sm font-medium text-[#1C1C1A]">{t.author}</p>
-                <p className="font-body text-xs font-light text-[#8C8279] mt-1 leading-relaxed">
+              <div className={`border-t ${borderColor} pt-5`}>
+                <p className={`font-body text-sm font-medium ${authorColor}`}>{t.author}</p>
+                <p className={`font-body text-xs font-light ${venueColor} mt-1 leading-relaxed`}>
                   {t.venue}
                 </p>
               </div>

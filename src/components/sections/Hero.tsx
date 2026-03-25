@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
-import { HOME, SITE } from '@/lib/content'
+import { HOME } from '@/lib/content'
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null)
@@ -116,16 +116,7 @@ export default function Hero() {
           opacity: prefersReduced ? 1 : fadeOut,
         }}
       >
-        <motion.span
-          className="font-accent text-[#B8963E] text-[10px] tracking-[0.28em] uppercase mb-6 block"
-          initial={{ opacity: 0, y: prefersReduced ? 0 : 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          {SITE.name} · Dubai
-        </motion.span>
-
-        <h1 className="font-display text-display-xl text-[#FDFCFA] mb-8 max-w-3xl">
+        <h1 className="font-display text-display-xl text-[#FDFCFA] mb-6 max-w-3xl">
           <span className="flex flex-wrap gap-x-[0.22em] mb-1">
             {line1.map((word, i) => (
               <motion.span
@@ -154,11 +145,20 @@ export default function Hero() {
           </span>
         </h1>
 
+        <motion.p
+          className="font-body text-base font-light text-white/70 mb-8 max-w-md leading-relaxed"
+          initial={{ opacity: 0, y: prefersReduced ? 0 : 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.85, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          One stop solution for all your Wedding and Event Decor needs.
+        </motion.p>
+
         <motion.div
           className="flex flex-col sm:flex-row items-start gap-4"
           initial={{ opacity: 0, y: prefersReduced ? 0 : 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.95, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.6, delay: 1.05, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <Link
             href="/enquire"

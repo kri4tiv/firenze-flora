@@ -58,10 +58,10 @@ export default function Nav() {
             <Image
               src="/images/brand/logo.png"
               alt=""
-              height={44}
-              width={132}
+              height={52}
+              width={156}
               className={cn(
-                'h-11 md:h-11 w-auto object-contain transition-all duration-450',
+                'h-[42px] md:h-[52px] w-auto object-contain transition-all duration-450',
                 scrolled || !isHome ? 'opacity-100' : 'brightness-0 invert opacity-90'
               )}
               priority
