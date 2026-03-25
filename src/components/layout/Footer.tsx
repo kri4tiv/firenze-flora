@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { SITE } from '@/lib/content'
 
 const services = [
@@ -32,7 +33,13 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <p className="font-display text-2xl mb-4">{SITE.name}</p>
+            <Image
+              src="/images/brand/logo.png"
+              alt="Firenze Flora"
+              height={32}
+              width={96}
+              className="h-8 w-auto object-contain mb-5 brightness-0 invert opacity-80"
+            />
             <p className="text-sm text-[#8C8279] font-light leading-relaxed mb-2">
               Premium floral and event decor studio in Dubai.
             </p>

@@ -8,18 +8,18 @@
    Design Tokens
 ───────────────────────────────────────────── */
 :root {
-  --cream: #F5F0E8;
-  --cream-dark: #EDE6D8;
-  --charcoal: #1C1C1A;
+  --cream:        #F5F0E8;
+  --cream-dark:   #EDE6D8;
+  --charcoal:     #1C1C1A;
   --charcoal-light: #2E2E2C;
-  --gold: #B8963E;
-  --gold-light: #D4B062;
-  --stone: #8C8279;
-  --white: #FDFCFA;
+  --gold:         #B8963E;
+  --gold-light:   #D4B062;
+  --stone:        #8C8279;
+  --white:        #FDFCFA;
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
-  --font-accent: 'Cormorant SC', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-accent:  'Cormorant SC', Georgia, serif;
 
   --easing-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -28,9 +28,7 @@
 /* ─────────────────────────────────────────────
    Base Reset & Typography
 ───────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -44,8 +42,9 @@ body {
   color: var(--charcoal);
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.75;
   font-weight: 300;
+  color: #2E2E2C;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,24 +52,37 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  color: #1C1C1A;
 }
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* Minimum readable size — never go below 13px */
+small, .text-xs { font-size: max(0.8125rem, 13px); }
 
 /* ─────────────────────────────────────────────
    Utility Classes
 ───────────────────────────────────────────── */
 @layer utilities {
-  .text-display {
-    font-family: var(--font-display);
-  }
-
-  .text-accent {
-    font-family: var(--font-accent);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
+  .font-display { font-family: var(--font-display); }
+  .font-body    { font-family: var(--font-body); }
+  .font-accent  { font-family: var(--font-accent); }
 
   .section-padding {
-    padding-top: clamp(4rem, 8vw, 8rem);
+    padding-top:    clamp(4rem, 8vw, 8rem);
     padding-bottom: clamp(4rem, 8vw, 8rem);
   }
 
@@ -79,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: clamp(1.25rem, 5vw, 4rem);
+    padding-left:  clamp(1.25rem, 5vw, 4rem);
     padding-right: clamp(1.25rem, 5vw, 4rem);
   }
 
@@ -90,19 +102,55 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--gold);
   }
 
-  /* Image placeholder shimmer */
+  /* Shimmer placeholder */
   .placeholder-shimmer {
     background: linear-gradient(90deg, #F5F0E8 25%, #EDE6D8 50%, #F5F0E8 75%);
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
   }
+
+  /* Subtle noise texture overlay for cream backgrounds */
+  .bg-cream-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
 }
 
 /* ─────────────────────────────────────────────
-   Shimmer Animation
+   Custom Cursor
+───────────────────────────────────────────── */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  will-change: transform;
+  transition:
+    width 0.18s var(--easing-smooth),
+    height 0.18s var(--easing-smooth),
+    background 0.18s,
+    border 0.18s;
+}
+
+.cursor-dot.cursor--hover {
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+}
+
+/* Hide default cursor globally when custom cursor is active */
+@media (pointer: fine) {
+  html:has(.cursor-dot) { cursor: none; }
+  html:has(.cursor-dot) a,
+  html:has(.cursor-dot) button,
+  html:has(.cursor-dot) [role="button"] { cursor: none; }
+}
+
+/* ─────────────────────────────────────────────
+   Animations
 ───────────────────────────────────────────── */
 @keyframes shimmer {
-  0% { background-position: 200% 0; }
+  0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
@@ -115,21 +163,12 @@ h1, h2, h3, h4, h5, h6 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
 }
 
 /* ─────────────────────────────────────────────
    Scrollbar
 ───────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--cream-dark);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--stone);
-  border-radius: 3px;
-}
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 3px; }

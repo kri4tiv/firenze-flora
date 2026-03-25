@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
@@ -51,10 +52,21 @@ export default function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className={cn('font-display text-xl tracking-wide transition-colors', textColor)}
+            className="relative flex items-center"
             onClick={() => setMenuOpen(false)}
           >
-            Firenze Flora
+            <Image
+              src="/images/brand/logo.png"
+              alt=""
+              height={44}
+              width={132}
+              className={cn(
+                'h-11 md:h-11 w-auto object-contain transition-all duration-450',
+                scrolled || !isHome ? 'opacity-100' : 'brightness-0 invert opacity-90'
+              )}
+              priority
+            />
+            <span className="sr-only">Firenze Flora</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -92,6 +104,7 @@ export default function Nav() {
           </button>
         </div>
       </header>
+      {/* Spacer so content isn't hidden under fixed nav */}
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

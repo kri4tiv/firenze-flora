@@ -29,6 +29,8 @@ public/images/**/*.jpg
 public/images/**/*.jpeg
 public/images/**/*.png
 !public/images/**/*.svg
+# Allow brand assets (logo)
+!public/images/brand/*.png
 public/videos/**/*.mp4
 public/videos/**/*.webm
 

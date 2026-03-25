@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import EnquireForm from '@/components/forms/EnquireForm'
 import { SITE, CONTACT } from '@/lib/content'
 
 export const metadata: Metadata = {
@@ -11,69 +11,79 @@ export default function ContactPage() {
   const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`
 
   return (
-    <div className="pt-32 pb-20 container-site">
-      <span className="font-accent text-[#B8963E] text-xs tracking-widest uppercase block mb-4">Get In Touch</span>
-      <h1 className="font-display text-display-lg text-[#1C1C1A] mb-4">{CONTACT.headline}</h1>
-      <p className="font-body text-sm font-light text-[#8C8279] mb-12">{CONTACT.responseTime}</p>
+    <div className="min-h-screen flex flex-col md:flex-row">
+      {/* Dark left panel — 40% */}
+      <div className="md:w-2/5 bg-[#1C1C1A] text-[#F5F0E8] flex flex-col justify-between pt-32 pb-16 px-10 md:px-14 shrink-0">
+        <div>
+          <span className="gold-line mb-5" />
+          <span className="font-accent text-[10px] tracking-[0.25em] text-[#8C8279] uppercase block mb-4">
+            Get In Touch
+          </span>
+          <h1 className="font-display text-display-md text-[#F5F0E8] mb-4 leading-tight">
+            {CONTACT.headline}
+          </h1>
+          <p className="font-body text-sm font-light text-[#8C8279] mb-12">
+            {CONTACT.responseTime}
+          </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-        <div className="space-y-8">
-          <div>
-            <p className="font-accent text-xs tracking-widest text-[#8C8279] uppercase mb-2">Location</p>
-            <p className="font-body text-sm text-[#1C1C1A] leading-relaxed">{SITE.address}</p>
-          </div>
-          <div>
-            <p className="font-accent text-xs tracking-widest text-[#8C8279] uppercase mb-2">Phone</p>
-            <a
-              href={`tel:${SITE.phoneTel}`}
-              className="font-body text-sm text-[#1C1C1A] hover:text-[#B8963E] transition-colors"
-            >
-              {SITE.phoneDisplay}
-            </a>
-          </div>
-          <div>
-            <p className="font-accent text-xs tracking-widest text-[#8C8279] uppercase mb-2">Email</p>
-            <a
-              href={`mailto:${SITE.email}`}
-              className="font-body text-sm text-[#1C1C1A] hover:text-[#B8963E] transition-colors"
-            >
-              {SITE.email}
-            </a>
-          </div>
-          <div>
-            <p className="font-accent text-xs tracking-widest text-[#8C8279] uppercase mb-2">WhatsApp</p>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-sm text-[#B8963E] hover:text-[#D4B062] transition-colors"
-            >
-              Chat with us →
-            </a>
-          </div>
-          <div className="pt-4">
-            <Link
-              href="/enquire"
-              className="inline-block px-7 py-3.5 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] transition-colors"
-            >
-              Start an Enquiry
-            </Link>
+          <div className="space-y-8">
+            <div>
+              <p className="font-accent text-[10px] tracking-[0.2em] text-[#8C8279]/60 uppercase mb-2">
+                Location
+              </p>
+              <p className="font-body text-sm font-light text-[#F5F0E8]/80 leading-relaxed">
+                {SITE.address}
+              </p>
+            </div>
+            <div>
+              <p className="font-accent text-[10px] tracking-[0.2em] text-[#8C8279]/60 uppercase mb-2">
+                Phone
+              </p>
+              <a
+                href={`tel:${SITE.phoneTel}`}
+                className="font-body text-sm text-[#F5F0E8]/80 hover:text-[#B8963E] transition-colors"
+              >
+                {SITE.phoneDisplay}
+              </a>
+            </div>
+            <div>
+              <p className="font-accent text-[10px] tracking-[0.2em] text-[#8C8279]/60 uppercase mb-2">
+                Email
+              </p>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="font-body text-sm text-[#F5F0E8]/80 hover:text-[#B8963E] transition-colors"
+              >
+                {SITE.email}
+              </a>
+            </div>
+            <div>
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body text-sm text-[#B8963E] hover:text-[#D4B062] transition-colors"
+              >
+                <span>Chat on WhatsApp</span>
+                <span>→</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Google Maps embed */}
-        <div className="aspect-square md:aspect-auto min-h-64 overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1785571654!2d55.2242!3d25.1972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzUwLjAiTiA1NcKwMTMnMjcuMiJF!5e0!3m2!1sen!2sae!4v1234567890"
-            width="100%"
-            height="100%"
-            style={{ border: 0, minHeight: '320px' }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Firenze Flora location — Sheikh Zayed Road, Dubai"
-            className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
-          />
+        {/* Bottom tagline */}
+        <p className="font-display text-xl italic text-[#F5F0E8]/30 mt-16">
+          Where flowers tell your story.
+        </p>
+      </div>
+
+      {/* Cream right panel — 60% */}
+      <div className="flex-1 bg-[#F5F0E8] flex items-start justify-center pt-32 pb-16 px-8 md:px-16">
+        <div className="w-full max-w-xl">
+          <p className="font-accent text-xs tracking-[0.2em] text-[#8C8279] uppercase mb-8">
+            Start an Enquiry
+          </p>
+          <EnquireForm />
         </div>
       </div>
     </div>
