@@ -35,10 +35,10 @@ const config: Config = {
         accent:  ['Cormorant SC', 'Georgia', 'serif'],
       },
       fontSize: {
-        'display-xl': ['clamp(3.5rem, 9vw, 8rem)',   { lineHeight: '1.02', letterSpacing: '-0.03em' }],
-        'display-lg': ['clamp(2.8rem, 6vw, 5.5rem)', { lineHeight: '1.08', letterSpacing: '-0.02em' }],
-        'display-md': ['clamp(2.2rem, 4vw, 3.8rem)', { lineHeight: '1.12', letterSpacing: '-0.02em' }],
-        'display-sm': ['clamp(1.6rem, 3vw, 2.4rem)', { lineHeight: '1.2',  letterSpacing: '-0.01em' }],
+        'display-xl': ['clamp(4rem, 10vw, 9rem)',      { lineHeight: '1.02', letterSpacing: '-0.03em' }],
+        'display-lg': ['clamp(3rem, 7vw, 6rem)',       { lineHeight: '1.08', letterSpacing: '-0.02em' }],
+        'display-md': ['clamp(2.4rem, 5vw, 4rem)',     { lineHeight: '1.12', letterSpacing: '-0.02em' }],
+        'display-sm': ['clamp(1.8rem, 3.5vw, 2.8rem)', { lineHeight: '1.2',  letterSpacing: '-0.01em' }],
       },
       spacing: {
         'section':    '8rem',

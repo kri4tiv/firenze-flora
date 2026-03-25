@@ -84,7 +84,7 @@ export default function SeoAccordion() {
                     transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="overflow-hidden"
                   >
-                    <p className="font-body text-sm font-light text-[#2E2E2C] leading-relaxed pb-6 max-w-3xl">
+                    <p className="font-body text-base font-light text-[#2E2E2C] leading-relaxed pb-6 max-w-3xl">
                       {item.body}
                     </p>
                   </motion.div>

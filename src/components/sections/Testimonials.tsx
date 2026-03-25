@@ -68,7 +68,7 @@ export default function Testimonials({ dark = false }: TestimonialsProps) {
 
               <div className={`border-t ${borderColor} pt-5`}>
                 <p className={`font-body text-sm font-medium ${authorColor}`}>{t.author}</p>
-                <p className={`font-body text-xs font-light ${venueColor} mt-1 leading-relaxed`}>
+                <p className={`font-accent text-xs tracking-[0.15em] uppercase text-[#B8963E] mt-1`}>
                   {t.venue}
                 </p>
               </div>

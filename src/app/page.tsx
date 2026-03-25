@@ -7,7 +7,6 @@ import HomepagePortfolio from '@/components/sections/HomepagePortfolio'
 import HomeServiceBlocks from '@/components/sections/HomeServiceBlocks'
 import Testimonials from '@/components/sections/Testimonials'
 import VenueStrip from '@/components/sections/VenueStrip'
-import SeoAccordion from '@/components/sections/SeoAccordion'
 import EnquireCTA from '@/components/sections/EnquireCTA'
 
 export const metadata: Metadata = {
@@ -39,19 +38,14 @@ export default function HomePage() {
             {/* Right: text */}
             <div>
               <span className="gold-line mb-5" />
-              <p className="font-accent text-xs tracking-[0.2em] text-[#B8963E] uppercase mb-3">
-                Your Exclusive Firenze Flora
-              </p>
               <h2 className="font-display text-display-md text-[#1C1C1A] mb-5 leading-tight">
-                Welcome to the world of flowers and splendor
+                Firenze Flora
               </h2>
               <p className="font-body text-base font-light text-[#2E2E2C] leading-relaxed mb-8">
-                At Firenze Flora, we possess the artistry and passion to craft the extraordinary.
-                Whether it&apos;s an enchanting wedding, a corporate event that leaves a lasting impression,
-                or a birthday celebration filled with vibrant colours, we have the expertise to transform
-                your vision into a reality with stunning decor and floral arrangements. With Firenze Flora
-                by your side, there are no boundaries to our creativity, and the possibilities for
-                unforgettable moments are boundless.
+                We possess the artistry and passion to craft the extraordinary. Whether it&apos;s
+                an enchanting wedding, a corporate event that leaves a lasting impression, or a
+                birthday celebration filled with vibrant colour, we transform your vision into
+                reality with stunning decor and floral arrangements.
               </p>
               <Link
                 href="/about"
@@ -79,9 +73,6 @@ export default function HomePage() {
 
       {/* Venue Strip */}
       <VenueStrip />
-
-      {/* SEO Accordion */}
-      <SeoAccordion />
 
       {/* Enquire CTA */}
       <EnquireCTA />

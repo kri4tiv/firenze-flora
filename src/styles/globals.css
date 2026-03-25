@@ -138,6 +138,11 @@ small, .text-xs { font-size: max(0.8125rem, 13px); }
   border: 1.5px solid var(--gold);
 }
 
+/* Hide custom cursor on touch devices */
+@media (hover: none) {
+  .cursor-dot { display: none; }
+}
+
 /* Hide default cursor globally when custom cursor is active */
 @media (pointer: fine) {
   html:has(.cursor-dot) { cursor: none; }

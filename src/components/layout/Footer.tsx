@@ -95,7 +95,7 @@ export default function Footer() {
           <div>
             <p className="font-accent text-xs tracking-widest text-[#8C8279] mb-5">Contact</p>
             <address className="not-italic space-y-2 text-sm font-light text-[#F5F0E8]/80">
-              <p className="text-xs leading-relaxed">{SITE.address}</p>
+              <p className="text-sm leading-relaxed">{SITE.address}</p>
               <a
                 href={`tel:${SITE.phoneTel}`}
                 className="block hover:text-[#F5F0E8] transition-colors"

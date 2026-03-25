@@ -22,18 +22,20 @@ export default function PackagesPage() {
       </div>
 
       <section className="container-site pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EDE6D8]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EDE6D8] overflow-visible mt-6">
           {PACKAGES.items.map((pkg) => (
             <div
               key={pkg.name}
               className={cn(
                 'p-10 flex flex-col relative',
-                pkg.highlight ? 'bg-[#1C1C1A]' : 'bg-[#F5F0E8]'
+                pkg.highlight
+                  ? 'bg-[#1C1C1A] border-2 border-[#B8963E]'
+                  : 'bg-[#F5F0E8]'
               )}
             >
               {pkg.highlight && (
-                <span className="absolute top-4 right-4 font-accent text-[9px] tracking-widest text-[#B8963E] uppercase border border-[#B8963E]/40 px-2 py-1">
-                  Popular
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 font-accent text-[9px] tracking-widest text-white uppercase bg-[#B8963E] px-4 py-1.5 whitespace-nowrap">
+                  Most Popular
                 </span>
               )}
               <span
@@ -52,7 +54,7 @@ export default function PackagesPage() {
               >
                 {pkg.name}
               </h2>
-              <p className="font-display text-xl text-[#B8963E] mb-8">{pkg.range}</p>
+              <p className="font-display text-3xl text-[#B8963E] mb-8">{pkg.range}</p>
               <ul className="space-y-2 mb-10 flex-1">
                 {pkg.items.map((item) => (
                   <li

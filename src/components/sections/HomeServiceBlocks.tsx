@@ -16,13 +16,8 @@ const blocks = [
     items: [
       {
         title: 'Wedding Centrepiece',
-        desc: 'Elevating tables to artistic statements, they infuse every moment with elegance.',
+        desc: 'Elevating tables to artistic statements, infusing every moment with elegance.',
         src: '/images/portfolio/centrepiece/centrepiece-01.webp', seed: 40,
-      },
-      {
-        title: 'Ceiling Overhanging Florals',
-        desc: 'The overhead masterpiece that turns ordinary venues into captivating realms.',
-        src: '/images/portfolio/flower-arch/flower-arch-01.webp', seed: 50,
       },
       {
         title: 'Arabic Weddings',
@@ -31,13 +26,8 @@ const blocks = [
       },
       {
         title: 'Indian Wedding',
-        desc: 'Florals are a symphony of fragrances, colours, and emotions reflecting the grandeur of the occasion.',
+        desc: 'A symphony of fragrances, colours, and emotions reflecting the grandeur of the occasion.',
         src: '/images/portfolio/indian-wedding/indian-wedding-01.webp', seed: 20,
-      },
-      {
-        title: 'Bridal Bouquet',
-        desc: 'A symbol of love and a piece of art, walking down the aisle as the bride\'s radiant companion.',
-        src: '/images/portfolio/centrepiece/centrepiece-02.webp', seed: 45,
       },
     ],
   },
@@ -51,28 +41,18 @@ const blocks = [
     items: [
       {
         title: 'Private Events',
-        desc: 'From intimate gatherings to grand celebrations, we handle concept through to complete setup.',
+        desc: 'From intimate gatherings to grand celebrations, concept through to complete setup.',
         src: '/images/portfolio/reception-decor/reception-decor-02.webp', seed: 60,
       },
       {
-        title: 'Anniversary Events',
-        desc: 'Floral decoration that symbolises enduring love and the blossoming of cherished memories.',
-        src: '/images/portfolio/iranian-wedding/iranian-wedding-03.webp', seed: 62,
-      },
-      {
         title: 'Birthday Party',
-        desc: 'From charming centrepieces to statement installations, we create atmospheres where wishes come true.',
+        desc: 'Charming centrepieces to statement installations — atmospheres where wishes come true.',
         src: '/images/portfolio/arabic-wedding/arabic-wedding-05.webp', seed: 65,
       },
       {
         title: 'Proposals',
         desc: 'A scene of timeless romance where every detail speaks of your love story.',
         src: '/images/portfolio/flower-arch/flower-arch-02.webp', seed: 70,
-      },
-      {
-        title: 'Theme Parties',
-        desc: 'Where imagination meets design, turning an event into an unforgettable experience.',
-        src: '/images/portfolio/iranian-wedding/iranian-wedding-05.webp', seed: 75,
       },
     ],
   },
@@ -85,13 +65,8 @@ const blocks = [
     description: 'Decor is the visual language of your brand — shaping a memorable and impactful experience for clients, partners, and employees.',
     items: [
       {
-        title: 'Corporate Lunch Table Decor',
-        desc: 'Elevating the ambiance to foster connections and productive conversations.',
-        src: '/images/portfolio/centrepiece/centrepiece-03.webp', seed: 80,
-      },
-      {
         title: 'Branded Flower Wall',
-        desc: 'A captivating visual expression of a brand\'s identity, leaving a lasting impact at events.',
+        desc: 'A captivating visual expression of your brand\'s identity, leaving a lasting impact.',
         src: '/images/portfolio/flower-arch/flower-arch-04.webp', seed: 82,
       },
       {
@@ -100,13 +75,8 @@ const blocks = [
         src: '/images/portfolio/reception-decor/reception-decor-03.webp', seed: 85,
       },
       {
-        title: 'Exhibitions',
-        desc: 'Where brand identity and creativity converge, turning spaces into engaging showcases.',
-        src: '/images/portfolio/flower-arch/flower-arch-05.webp', seed: 88,
-      },
-      {
         title: 'Corporate Gifting',
-        desc: 'A strategic tool reinforcing connections and leaving a positive impression.',
+        desc: 'A strategic tool that reinforces connections and leaves a positive lasting impression.',
         src: '/images/portfolio/centrepiece/centrepiece-04.webp', seed: 90,
       },
     ],
@@ -187,10 +157,10 @@ export default function HomeServiceBlocks() {
           </div>
 
           {/* Sub-items grid */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-[#EDE6D8]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {block.items.map((item, i) => (
               <div key={item.title} className="bg-[#FDFCFA] group overflow-hidden">
-                <div className="relative h-36 overflow-hidden bg-[#EDE6D8]">
+                <div className="relative aspect-[16/9] overflow-hidden bg-[#EDE6D8]">
                   <Image
                     src={failedItems.has(`${block.slug}-${i}`)
                       ? `https://picsum.photos/seed/${item.seed}/400/300`
@@ -203,11 +173,11 @@ export default function HomeServiceBlocks() {
                   />
                   <div className="absolute inset-0 bg-[#1C1C1A]/20 group-hover:bg-[#1C1C1A]/10 transition-colors duration-300" />
                 </div>
-                <div className="p-4">
-                  <h4 className="font-display text-sm text-[#1C1C1A] mb-1.5 leading-tight group-hover:text-[#B8963E] transition-colors">
+                <div className="p-5">
+                  <h4 className="font-display text-lg text-[#1C1C1A] mb-2 leading-tight group-hover:text-[#B8963E] transition-colors">
                     {item.title}
                   </h4>
-                  <p className="font-body text-[11px] font-light text-[#8C8279] leading-relaxed">
+                  <p className="font-body text-sm font-light text-[#8C8279] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
