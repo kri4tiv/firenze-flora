@@ -1,33 +1,24 @@
-/* Fonts loaded via next/font/google in layout.tsx — no @import needed */
+/* Fonts loaded via next/font/google in layout.tsx */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ─────────────────────────────────────────────
-   Design Tokens
-───────────────────────────────────────────── */
 :root {
-  --cream:        #F5F0E8;
-  --cream-dark:   #EDE6D8;
-  --charcoal:     #1C1C1A;
-  --charcoal-light: #2E2E2C;
-  --gold:         #B8963E;
-  --gold-light:   #D4B062;
-  --stone:        #8C8279;
-  --white:        #FDFCFA;
-
+  --black:      #0A0A0A;
+  --dark:       #141414;
+  --dark-mid:   #242424;
+  --gold:       #B8963E;
+  --gold-light: #D4B062;
+  --cream:      #F5F0E8;
+  --stone:      #8C8279;
+  --muted:      #4A4540;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
   --font-accent:  'Cormorant SC', Georgia, serif;
-
   --easing-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ─────────────────────────────────────────────
-   Base Reset & Typography
-───────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -38,54 +29,41 @@ html {
 }
 
 body {
-  background-color: var(--cream);
-  color: var(--charcoal);
+  background-color: #0A0A0A;
+  color: #8C8279;
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.75;
   font-weight: 300;
-  color: #2E2E2C;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  color: #F5F0E8;
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #1C1C1A;
 }
 
-h3 {
-  font-size: 1.5rem;
-  font-weight: 400;
+a {
+  color: #F5F0E8;
+  text-decoration: none;
+  transition: color 200ms;
 }
+a:hover { color: #B8963E; }
 
-h4 {
-  font-size: 1.2rem;
-  font-weight: 400;
-}
+p { font-size: 1rem; line-height: 1.75; }
 
-p {
-  font-size: 1rem;
-  line-height: 1.75;
-}
+::selection { background: #B8963E; color: #0A0A0A; }
 
-/* Minimum readable size — never go below 13px */
-small, .text-xs { font-size: max(0.8125rem, 13px); }
-
-/* ─────────────────────────────────────────────
-   Utility Classes
-───────────────────────────────────────────── */
 @layer utilities {
   .font-display { font-family: var(--font-display); }
   .font-body    { font-family: var(--font-body); }
   .font-accent  { font-family: var(--font-accent); }
-
   .section-padding {
     padding-top:    clamp(4rem, 8vw, 8rem);
     padding-bottom: clamp(4rem, 8vw, 8rem);
   }
-
   .container-site {
     width: 100%;
     max-width: 1400px;
@@ -94,74 +72,36 @@ small, .text-xs { font-size: max(0.8125rem, 13px); }
     padding-left:  clamp(1.25rem, 5vw, 4rem);
     padding-right: clamp(1.25rem, 5vw, 4rem);
   }
-
-  .gold-line {
-    display: block;
-    width: 2.5rem;
-    height: 1px;
-    background-color: var(--gold);
-  }
-
-  /* Shimmer placeholder */
   .placeholder-shimmer {
-    background: linear-gradient(90deg, #F5F0E8 25%, #EDE6D8 50%, #F5F0E8 75%);
+    background: linear-gradient(90deg, #141414 25%, #242424 50%, #141414 75%);
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
   }
-
-  /* Subtle noise texture overlay for cream backgrounds */
-  .bg-cream-texture {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  }
 }
 
-/* ─────────────────────────────────────────────
-   Custom Cursor
-───────────────────────────────────────────── */
 .cursor-dot {
-  width: 8px;
-  height: 8px;
+  width: 8px; height: 8px;
   background: var(--gold);
   border-radius: 50%;
   will-change: transform;
-  transition:
-    width 0.18s var(--easing-smooth),
-    height 0.18s var(--easing-smooth),
-    background 0.18s,
-    border 0.18s;
+  transition: width 0.18s var(--easing-smooth), height 0.18s var(--easing-smooth), background 0.18s, border 0.18s;
 }
-
 .cursor-dot.cursor--hover {
-  width: 28px;
-  height: 28px;
+  width: 28px; height: 28px;
   background: transparent;
   border: 1.5px solid var(--gold);
 }
-
-/* Hide custom cursor on touch devices */
-@media (hover: none) {
-  .cursor-dot { display: none; }
-}
-
-/* Hide default cursor globally when custom cursor is active */
+@media (hover: none) { .cursor-dot { display: none; } }
 @media (pointer: fine) {
   html:has(.cursor-dot) { cursor: none; }
-  html:has(.cursor-dot) a,
-  html:has(.cursor-dot) button,
-  html:has(.cursor-dot) [role="button"] { cursor: none; }
+  html:has(.cursor-dot) a, html:has(.cursor-dot) button, html:has(.cursor-dot) [role="button"] { cursor: none; }
 }
 
-/* ─────────────────────────────────────────────
-   Animations
-───────────────────────────────────────────── */
 @keyframes shimmer {
   0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
-/* ─────────────────────────────────────────────
-   Reduced Motion
-───────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -171,9 +111,6 @@ small, .text-xs { font-size: max(0.8125rem, 13px); }
   html { scroll-behavior: auto; }
 }
 
-/* ─────────────────────────────────────────────
-   Scrollbar
-───────────────────────────────────────────── */
-::-webkit-scrollbar       { width: 5px; }
-::-webkit-scrollbar-track { background: var(--cream-dark); }
-::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 3px; }
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #242424; border-radius: 2px; }

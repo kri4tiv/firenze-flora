@@ -1,282 +1,150 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { SITE } from '@/lib/content'
 
-type Step = 1 | 2 | 3
+type Step = 1 | 2
 
 interface FormData {
   eventType: string
   eventDate: string
-  venue: string
-  budget: string
+  message: string
   name: string
   phone: string
   email: string
-  message: string
 }
 
-const eventTypes = [
-  'Wedding', 'Birthday', 'Corporate Event', 'Opening / Launch',
-  'Anniversary', 'Baby Shower', 'Proposal', 'Other',
-]
+const eventTypes = ['Wedding', 'Birthday', 'Corporate', 'Opening', 'Anniversary', 'Other']
 
-const budgetRanges = [
-  'AED 3,000 – 8,000',
-  'AED 8,000 – 20,000',
-  'AED 20,000 – 50,000',
-  'AED 50,000+',
-  'Not sure yet',
-]
+const input = 'bg-[#141414] border border-[#242424] text-[#F5F0E8] placeholder:text-[#4A4540] px-4 py-3.5 w-full focus:outline-none focus:border-[#B8963E] transition-colors duration-200 font-body text-base'
 
 export default function EnquireForm() {
-  const [step, setStep] = useState<Step>(1)
+  const [step,      setStep]      = useState<Step>(1)
   const [submitted, setSubmitted] = useState(false)
-  const [data, setData] = useState<FormData>({
-    eventType: '', eventDate: '', venue: '', budget: '',
-    name: '', phone: '', email: '', message: '',
+  const [data,      setData]      = useState<FormData>({
+    eventType: '', eventDate: '', message: '', name: '', phone: '', email: '',
   })
 
   const update = (field: keyof FormData, value: string) =>
-    setData((prev) => ({ ...prev, [field]: value }))
+    setData(prev => ({ ...prev, [field]: value }))
 
-  const handleSubmit = async () => {
-    // TODO: wire to form endpoint (Formspree, Resend, or owner's backend)
-    console.log('Form submitted:', data)
-    setSubmitted(true)
-  }
+  const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`
 
   if (submitted) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center py-16"
-      >
-        <span className="font-accent text-[#B8963E] text-xs tracking-widest uppercase block mb-6">
-          Thank You
-        </span>
-        <h2 className="font-display text-3xl text-[#1C1C1A] mb-4">
-          We'll be in touch shortly.
-        </h2>
-        <p className="font-body text-sm text-[#8C8279] mb-8 max-w-sm mx-auto">
-          Our team typically responds within 24 hours. For urgent requests, reach us on WhatsApp.
+      <div className="text-center py-16">
+        <p className="font-display text-display-sm text-[#F5F0E8] mb-4">
+          Thank you. We&apos;ll be in touch within 24 hours.
         </p>
         <a
-          href="https://wa.me/971000000000?text=Hi%20Firenze%20Flora,%20I%20just%20submitted%20an%20enquiry"
+          href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-6 py-3 bg-[#25D366] text-white font-body text-sm tracking-widest uppercase hover:bg-[#128C7E] transition-colors"
+          className="inline-block mt-6 px-8 py-4 bg-[#25D366] text-white font-body text-sm tracking-widest uppercase"
         >
           Continue on WhatsApp
         </a>
-      </motion.div>
+      </div>
     )
   }
 
   return (
     <div>
-      {/* Step indicator */}
-      <div className="flex items-center gap-3 mb-10">
-        {([1, 2, 3] as Step[]).map((s) => (
+      {/* Progress */}
+      <div className="flex items-center gap-4 mb-12">
+        {([1, 2] as Step[]).map((s) => (
           <div key={s} className="flex items-center gap-3">
-            <div
-              className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-body transition-all duration-250 ${
-                s === step
-                  ? 'bg-[#B8963E] text-white'
-                  : s < step
-                  ? 'bg-[#B8963E]/30 text-[#B8963E]'
-                  : 'bg-[#EDE6D8] text-[#8C8279]'
-              }`}
-            >
-              {s < step ? '✓' : s}
+            <div className={`flex items-center gap-2 ${step === s ? 'opacity-100' : 'opacity-40'}`}>
+              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-body transition-all ${step >= s ? 'bg-[#B8963E] text-[#0A0A0A]' : 'border border-[#242424] text-[#8C8279]'}`}>
+                0{s}
+              </span>
+              <span className="font-body text-sm text-[#8C8279] uppercase tracking-widest">
+                {s === 1 ? 'Event' : 'Contact'}
+              </span>
             </div>
-            {s < 3 && <div className={`flex-1 h-px w-8 ${s < step ? 'bg-[#B8963E]' : 'bg-[#EDE6D8]'}`} />}
+            {s < 2 && <div className={`w-16 h-px ${step > 1 ? 'bg-[#B8963E]' : 'bg-[#242424]'}`} />}
           </div>
         ))}
-        <span className="ml-2 font-body text-xs text-[#8C8279]">
-          {step === 1 ? 'Event Details' : step === 2 ? 'Location & Budget' : 'Your Info'}
-        </span>
       </div>
 
-      <AnimatePresence mode="wait">
-        {/* Step 1 */}
-        {step === 1 && (
-          <motion.div
-            key="step1"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
+      {step === 1 && (
+        <div>
+          <div className="flex flex-wrap gap-2 mb-8">
+            {eventTypes.map(type => (
+              <button
+                key={type}
+                onClick={() => update('eventType', type)}
+                className={`border px-4 py-2.5 text-sm font-body transition-all duration-200 ${
+                  data.eventType === type
+                    ? 'border-[#B8963E] text-[#F5F0E8] bg-[#B8963E]/10'
+                    : 'border-[#242424] text-[#8C8279] hover:border-[#B8963E] hover:text-[#F5F0E8]'
+                }`}
+              >
+                {type}
+              </button>
+            ))}
+          </div>
+          <input
+            type="date"
+            value={data.eventDate}
+            onChange={e => update('eventDate', e.target.value)}
+            className={`${input} mb-4`}
+          />
+          <textarea
+            rows={3}
+            placeholder="Tell us about your vision..."
+            value={data.message}
+            onChange={e => update('message', e.target.value)}
+            className={`${input} resize-none mb-8`}
+          />
+          <button
+            onClick={() => data.eventType && setStep(2)}
+            disabled={!data.eventType}
+            className="w-full py-4 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
-            <h3 className="font-display text-2xl text-[#1C1C1A] mb-6">What are we celebrating?</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6">
-              {eventTypes.map((type) => (
-                <button
-                  key={type}
-                  onClick={() => update('eventType', type)}
-                  className={`py-3 px-3 text-xs font-body tracking-wide border transition-all duration-250 text-left ${
-                    data.eventType === type
-                      ? 'border-[#B8963E] bg-[#B8963E]/10 text-[#B8963E]'
-                      : 'border-[#EDE6D8] text-[#2E2E2C] hover:border-[#B8963E]/40'
-                  }`}
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
-            <div className="mb-8">
-              <label className="font-accent text-xs tracking-widest text-[#8C8279] uppercase block mb-2">
-                Event Date
-              </label>
-              <input
-                type="date"
-                value={data.eventDate}
-                onChange={(e) => update('eventDate', e.target.value)}
-                className="w-full md:w-64 border border-[#EDE6D8] bg-white px-4 py-3 font-body text-sm text-[#1C1C1A] focus:outline-none focus:border-[#B8963E] transition-colors"
-              />
-            </div>
-            <button
-              onClick={() => data.eventType && setStep(2)}
-              disabled={!data.eventType}
-              className="px-7 py-3.5 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-250"
-            >
-              Next →
-            </button>
-          </motion.div>
-        )}
+            Next →
+          </button>
+        </div>
+      )}
 
-        {/* Step 2 */}
-        {step === 2 && (
-          <motion.div
-            key="step2"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
+      {step === 2 && (
+        <div>
+          <input
+            type="text"
+            placeholder="Your name"
+            value={data.name}
+            onChange={e => update('name', e.target.value)}
+            className={`${input} mb-4`}
+          />
+          <input
+            type="tel"
+            placeholder="+971 00 000 0000"
+            value={data.phone}
+            onChange={e => update('phone', e.target.value)}
+            className={`${input} mb-4`}
+          />
+          <input
+            type="email"
+            placeholder="your@email.com"
+            value={data.email}
+            onChange={e => update('email', e.target.value)}
+            className={`${input} mb-8`}
+          />
+          <button
+            onClick={() => (data.name && data.email) && setSubmitted(true)}
+            disabled={!data.name || !data.email}
+            className="w-full py-4 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] disabled:opacity-40 disabled:cursor-not-allowed transition-colors mb-6"
           >
-            <h3 className="font-display text-2xl text-[#1C1C1A] mb-6">Venue & budget</h3>
-            <div className="mb-6">
-              <label className="font-accent text-xs tracking-widest text-[#8C8279] uppercase block mb-2">
-                Venue / Area in Dubai
-              </label>
-              <input
-                type="text"
-                placeholder="e.g. Jumeirah, Downtown, DIFC, Palm..."
-                value={data.venue}
-                onChange={(e) => update('venue', e.target.value)}
-                className="w-full border border-[#EDE6D8] bg-white px-4 py-3 font-body text-sm text-[#1C1C1A] placeholder:text-[#8C8279]/50 focus:outline-none focus:border-[#B8963E] transition-colors"
-              />
-            </div>
-            <div className="mb-8">
-              <label className="font-accent text-xs tracking-widest text-[#8C8279] uppercase block mb-2">
-                Approximate Budget
-              </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                {budgetRanges.map((range) => (
-                  <button
-                    key={range}
-                    onClick={() => update('budget', range)}
-                    className={`py-3 px-4 text-xs font-body border text-left transition-all duration-250 ${
-                      data.budget === range
-                        ? 'border-[#B8963E] bg-[#B8963E]/10 text-[#B8963E]'
-                        : 'border-[#EDE6D8] text-[#2E2E2C] hover:border-[#B8963E]/40'
-                    }`}
-                  >
-                    {range}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <button
-                onClick={() => setStep(1)}
-                className="px-5 py-3.5 border border-[#EDE6D8] text-[#8C8279] font-body text-sm tracking-widest uppercase hover:border-[#8C8279] transition-colors duration-250"
-              >
-                ← Back
-              </button>
-              <button
-                onClick={() => setStep(3)}
-                className="px-7 py-3.5 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] transition-colors duration-250"
-              >
-                Next →
-              </button>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Step 3 */}
-        {step === 3 && (
-          <motion.div
-            key="step3"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <h3 className="font-display text-2xl text-[#1C1C1A] mb-6">How can we reach you?</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="font-accent text-xs tracking-widest text-[#8C8279] uppercase block mb-2">Name</label>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  value={data.name}
-                  onChange={(e) => update('name', e.target.value)}
-                  className="w-full border border-[#EDE6D8] bg-white px-4 py-3 font-body text-sm focus:outline-none focus:border-[#B8963E] transition-colors"
-                />
-              </div>
-              <div>
-                <label className="font-accent text-xs tracking-widest text-[#8C8279] uppercase block mb-2">Phone</label>
-                <input
-                  type="tel"
-                  placeholder="+971 00 000 0000"
-                  value={data.phone}
-                  onChange={(e) => update('phone', e.target.value)}
-                  className="w-full border border-[#EDE6D8] bg-white px-4 py-3 font-body text-sm focus:outline-none focus:border-[#B8963E] transition-colors"
-                />
-              </div>
-            </div>
-            <div className="mb-4">
-              <label className="font-accent text-xs tracking-widest text-[#8C8279] uppercase block mb-2">Email</label>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={data.email}
-                onChange={(e) => update('email', e.target.value)}
-                className="w-full border border-[#EDE6D8] bg-white px-4 py-3 font-body text-sm focus:outline-none focus:border-[#B8963E] transition-colors"
-              />
-            </div>
-            <div className="mb-8">
-              <label className="font-accent text-xs tracking-widest text-[#8C8279] uppercase block mb-2">
-                Tell us more (optional)
-              </label>
-              <textarea
-                rows={4}
-                placeholder="Share your vision, inspiration, or any specific requirements..."
-                value={data.message}
-                onChange={(e) => update('message', e.target.value)}
-                className="w-full border border-[#EDE6D8] bg-white px-4 py-3 font-body text-sm resize-none focus:outline-none focus:border-[#B8963E] transition-colors"
-              />
-            </div>
-            <div className="flex gap-4">
-              <button
-                onClick={() => setStep(2)}
-                className="px-5 py-3.5 border border-[#EDE6D8] text-[#8C8279] font-body text-sm tracking-widest uppercase hover:border-[#8C8279] transition-colors duration-250"
-              >
-                ← Back
-              </button>
-              <button
-                onClick={handleSubmit}
-                disabled={!data.name || !data.email}
-                className="px-7 py-3.5 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-250"
-              >
-                Send Enquiry
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            Send Enquiry
+          </button>
+          <p className="text-center font-body text-sm text-[#8C8279]">
+            Prefer WhatsApp?{' '}
+            <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-[#B8963E] hover:text-[#D4B062]">
+              Chat with us →
+            </a>
+          </p>
+        </div>
+      )}
     </div>
   )
 }
