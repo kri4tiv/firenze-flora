@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, LazyMotion, domAnimation } from 'framer-motion'
 import { SITE } from '@/lib/content'
 
 const navLinks = [
@@ -34,7 +34,7 @@ export default function Nav() {
   const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-md' : 'bg-transparent'}`}>
         <div className="container-site flex items-center justify-between h-16 md:h-20">
           <Link href="/" onClick={() => setMenuOpen(false)}>
@@ -42,7 +42,7 @@ export default function Nav() {
               src="/images/brand/logo.png"
               alt="Firenze Flora"
               height={44} width={132}
-              className="h-9 md:h-11 w-auto object-contain brightness-0 invert"
+              className="h-11 md:h-[56px] w-auto object-contain brightness-0 invert"
               priority
             />
           </Link>
@@ -75,7 +75,7 @@ export default function Nav() {
                   src="/images/brand/logo.png"
                   alt="Firenze Flora"
                   height={44} width={132}
-                  className="h-9 md:h-11 w-auto object-contain brightness-0 invert"
+                  className="h-11 md:h-[56px] w-auto object-contain brightness-0 invert"
                 />
               </Link>
               <button onClick={() => setMenuOpen(false)} aria-label="Close menu" className="p-2">
@@ -100,7 +100,7 @@ export default function Nav() {
                     <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className={`font-display text-display-md block py-1 transition-colors duration-200 ${isActive ? 'text-[#B8963E]' : 'text-[#F5F0E8]/60 hover:text-[#F5F0E8]'}`}
+                      className={`font-display text-display-lg block py-1 transition-colors duration-200 ${isActive ? 'text-[#B8963E]' : 'text-[#F5F0E8]/60 hover:text-[#F5F0E8]'}`}
                     >
                       {link.label}
                     </Link>
@@ -115,14 +115,14 @@ export default function Nav() {
                 transition={{ delay: navLinks.length * 0.06 + 0.1, duration: 0.4 }}
                 className="mt-10 space-y-1.5"
               >
-                <a href={`tel:${SITE.phoneTel}`} className="block font-body text-sm text-[#8C8279] hover:text-[#F5F0E8] transition-colors">{SITE.phoneDisplay}</a>
-                <a href={`mailto:${SITE.email}`}  className="block font-body text-sm text-[#8C8279] hover:text-[#F5F0E8] transition-colors">{SITE.email}</a>
-                <a href={waUrl} target="_blank" rel="noopener noreferrer" className="block font-body text-sm text-[#B8963E] hover:text-[#D4B062] transition-colors">WhatsApp →</a>
+                <a href={`tel:${SITE.phoneTel}`} className="block font-body text-base text-[#8C8279] hover:text-[#F5F0E8] transition-colors">{SITE.phoneDisplay}</a>
+                <a href={`mailto:${SITE.email}`}  className="block font-body text-base text-[#8C8279] hover:text-[#F5F0E8] transition-colors">{SITE.email}</a>
+                <a href={waUrl} target="_blank" rel="noopener noreferrer" className="block font-body text-base text-[#B8963E] hover:text-[#D4B062] transition-colors">WhatsApp →</a>
               </motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </LazyMotion>
   )
 }

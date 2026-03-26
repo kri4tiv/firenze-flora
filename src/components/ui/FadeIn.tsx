@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, LazyMotion, domAnimation } from 'framer-motion'
 import { ReactNode } from 'react'
 
 export default function FadeIn({
@@ -15,6 +15,7 @@ export default function FadeIn({
   className?: string
 }) {
   return (
+    <LazyMotion features={domAnimation}>
     <motion.div
       initial={{
         opacity: 0,
@@ -28,5 +29,6 @@ export default function FadeIn({
     >
       {children}
     </motion.div>
+    </LazyMotion>
   )
 }

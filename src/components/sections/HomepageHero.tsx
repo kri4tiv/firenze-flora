@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, LazyMotion, domAnimation } from 'framer-motion'
 import { SITE } from '@/lib/content'
 
 export default function HomepageHero() {
@@ -14,6 +14,7 @@ export default function HomepageHero() {
   const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`
 
   return (
+    <LazyMotion features={domAnimation}>
     <section ref={ref} className="relative h-screen min-h-[600px] flex items-end overflow-hidden">
       <motion.div className="absolute inset-0" style={{ y }}>
         <Image
@@ -44,5 +45,6 @@ export default function HomepageHero() {
         </div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

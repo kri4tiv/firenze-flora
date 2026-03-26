@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
-import Lightbox from '@/components/gallery/Lightbox'
 import TypeCards from '@/components/sections/TypeCards'
+
+const Lightbox = dynamic(() => import('@/components/gallery/Lightbox'), {
+  loading: () => <div className="w-full h-64 bg-[#141414] animate-pulse" />,
+  ssr: false,
+})
 
 export const metadata: Metadata = {
   title: 'Weddings | Wedding Decor in Dubai | Firenze Flora',
@@ -44,13 +49,14 @@ function makeImages(folder: string, count: number, altText: string) {
   }))
 }
 
+// 5 images × 6 folders = 30 images
 const galleryImages = [
-  ...makeImages('arabic-wedding',  28, 'Arabic wedding floral decor Dubai'),
-  ...makeImages('indian-wedding',  20, 'Indian wedding decor Dubai'),
-  ...makeImages('iranian-wedding', 24, 'Iranian wedding florals Dubai'),
-  ...makeImages('centrepiece',     23, 'Wedding centrepiece Dubai'),
-  ...makeImages('flower-arch',     15, 'Flower arch Dubai'),
-  ...makeImages('reception-decor', 10, 'Reception decor Dubai'),
+  ...makeImages('arabic-wedding',  5, 'Arabic wedding floral decor Dubai'),
+  ...makeImages('indian-wedding',  5, 'Indian wedding decor Dubai'),
+  ...makeImages('iranian-wedding', 5, 'Iranian wedding florals Dubai'),
+  ...makeImages('centrepiece',     5, 'Wedding centrepiece Dubai'),
+  ...makeImages('flower-arch',     5, 'Flower arch Dubai'),
+  ...makeImages('reception-decor', 5, 'Reception decor Dubai'),
 ]
 
 export default function WeddingsPage() {

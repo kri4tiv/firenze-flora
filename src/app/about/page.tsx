@@ -2,21 +2,13 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import StatsStrip from '@/components/sections/StatsStrip'
 import CTAStrip from '@/components/sections/CTAStrip'
+import TeamGrid from '@/components/sections/TeamGrid'
 import { ABOUT, TESTIMONIALS } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: ABOUT.metaTitle,
   description: ABOUT.metaDescription,
 }
-
-const team = [
-  { name: 'Laxman',  role: 'CEO',                  image: '/images/team/laxman.webp' },
-  { name: 'Ranbir',  role: 'Operations Head',       image: '/images/team/ranbir.webp' },
-  { name: 'Sanjay',  role: 'Event Consultant',      image: '/images/team/sanjay.webp' },
-  { name: 'Gulrukh', role: 'IT & Marketing',        image: '/images/team/gulrukh.webp' },
-  { name: 'Monila',  role: 'Wedding Consultant',    image: '/images/team/monila.webp' },
-  { name: 'JP',      role: 'Sales Manager',         image: '/images/team/jp.webp' },
-]
 
 export default function AboutPage() {
   return (
@@ -25,7 +17,7 @@ export default function AboutPage() {
       <div className="bg-[#0A0A0A] pt-40 pb-24">
         <div className="container-site">
           <h1 className="font-display text-display-lg text-[#F5F0E8]">About</h1>
-          <p className="font-display text-display-sm text-[#F5F0E8]/60 italic mt-4">
+          <p className="font-display text-display-sm text-[#F5F0E8]/70 italic mt-4">
             We don&apos;t decorate spaces. We compose experiences.
           </p>
         </div>
@@ -35,9 +27,9 @@ export default function AboutPage() {
       <section className="bg-[#141414] py-24">
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="space-y-6">
+            <div className="space-y-7">
               {ABOUT.body.map((para, i) => (
-                <p key={i} className="font-body text-base text-[#8C8279] leading-relaxed">{para}</p>
+                <p key={i} className="font-body text-lg text-[#C8BFB8] leading-[1.9]">{para}</p>
               ))}
             </div>
             <div className="relative aspect-[4/5] overflow-hidden">
@@ -59,7 +51,7 @@ export default function AboutPage() {
       {/* Testimonials */}
       <section className="bg-[#0A0A0A] py-24">
         <div className="container-site">
-          <h2 className="font-display text-display-md text-[#F5F0E8] mb-16">What clients say</h2>
+          <h2 className="font-display text-display-md text-[#F5F0E8] mb-8">What clients say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#242424]">
             {TESTIMONIALS.map((t) => {
               const initial = t.author.charAt(0).toUpperCase()
@@ -93,28 +85,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-[#141414] py-24">
-        <div className="container-site">
-          <h2 className="font-display text-display-md text-[#F5F0E8] mb-12 text-center">Meet the team</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {team.map((member) => (
-              <div key={member.name} className="text-center">
-                <div className="relative aspect-square overflow-hidden mb-4">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                  />
-                </div>
-                <p className="font-body text-sm font-medium text-[#F5F0E8]">{member.name}</p>
-                <p className="font-body text-xs text-[#B8963E] tracking-wide mt-0.5">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamGrid />
 
       <CTAStrip />
     </>

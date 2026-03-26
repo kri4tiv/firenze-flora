@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
-import Lightbox from '@/components/gallery/Lightbox'
 import TypeCards from '@/components/sections/TypeCards'
+
+const Lightbox = dynamic(() => import('@/components/gallery/Lightbox'), {
+  loading: () => <div className="w-full h-64 bg-[#141414] animate-pulse" />,
+  ssr: false,
+})
 
 export const metadata: Metadata = {
   title: 'Events | Premium Event Decor in Dubai | Firenze Flora',
@@ -11,16 +16,16 @@ export const metadata: Metadata = {
 }
 
 const eventTypeCards = [
-  { name: 'Private Parties',      image: '/images/portfolio/private-event.webp' },
-  { name: 'Corporate Events',     image: '/images/portfolio/corporate-hero.webp' },
-  { name: 'Brand Activations',    image: '/images/portfolio/brand-activation.webp' },
-  { name: 'Product Launches',     image: '/images/portfolio/soft-opening.webp' },
-  { name: 'Openings & Ceremonies',image: '/images/portfolio/brand-wall.webp' },
-  { name: 'Birthdays',            image: '/images/portfolio/birthday-event.webp' },
-  { name: 'Anniversaries',        image: '/images/portfolio/anniversary-event.webp' },
-  { name: 'Baby Showers',         image: '/images/portfolio/reception-decor/reception-decor-01.webp' },
-  { name: 'Proposals',            image: '/images/portfolio/proposal-event.webp' },
-  { name: 'Graduations',          image: '/images/portfolio/theme-party.webp' },
+  { name: 'Private Parties',       image: '/images/portfolio/private-event.webp' },
+  { name: 'Corporate Events',      image: '/images/portfolio/corporate-hero.webp' },
+  { name: 'Brand Activations',     image: '/images/portfolio/brand-activation.webp' },
+  { name: 'Product Launches',      image: '/images/portfolio/soft-opening.webp' },
+  { name: 'Openings & Ceremonies', image: '/images/portfolio/brand-wall.webp' },
+  { name: 'Birthdays',             image: '/images/portfolio/birthday-event.webp' },
+  { name: 'Anniversaries',         image: '/images/portfolio/anniversary-event.webp' },
+  { name: 'Baby Showers',          image: '/images/portfolio/reception-decor/reception-decor-01.webp' },
+  { name: 'Proposals',             image: '/images/portfolio/proposal-event.webp' },
+  { name: 'Graduations',           image: '/images/portfolio/theme-party.webp' },
 ]
 
 const faqs = [
@@ -43,16 +48,6 @@ const faqs = [
 ]
 
 const galleryImages = [
-  { src: '/images/portfolio/reception-decor/reception-decor-01.webp', alt: 'Reception decor Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-02.webp', alt: 'Event florals Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-03.webp', alt: 'Corporate event Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-04.webp', alt: 'Event decor Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-05.webp', alt: 'Event styling Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-06.webp', alt: 'Reception florals Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-07.webp', alt: 'Event setup Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-08.webp', alt: 'Event backdrop Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-09.webp', alt: 'Corporate florals Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-10.webp', alt: 'Event centrepiece Dubai' },
   { src: '/images/portfolio/corporate-hero.webp',    alt: 'Corporate event Dubai' },
   { src: '/images/portfolio/brand-wall.webp',        alt: 'Brand flower wall Dubai' },
   { src: '/images/portfolio/brand-activation.webp',  alt: 'Brand activation Dubai' },

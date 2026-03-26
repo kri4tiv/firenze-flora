@@ -44,7 +44,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-700" />
           <div className="absolute bottom-0 left-0 p-10 md:p-14" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
             <p className="font-body text-lg tracking-[0.2em] uppercase text-white mb-3">Weddings</p>
-            <h2 className="font-display text-display-md text-white font-[600] leading-tight">
+            <h2 className="font-display text-display-md text-white font-[400] leading-tight">
               Where your story begins.
             </h2>
             <span className="block font-body text-sm text-white/70 group-hover:text-white mt-4 transition-colors">
@@ -63,7 +63,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-700" />
           <div className="absolute bottom-0 left-0 p-10 md:p-14" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
             <p className="font-body text-lg tracking-[0.2em] uppercase text-white mb-3">Events</p>
-            <h2 className="font-display text-display-md text-white font-[600] leading-tight">
+            <h2 className="font-display text-display-md text-white font-[400] leading-tight">
               Every moment, perfected.
             </h2>
             <span className="block font-body text-sm text-white/70 group-hover:text-white mt-4 transition-colors">
