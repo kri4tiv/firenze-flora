@@ -3,15 +3,24 @@ import Image from 'next/image'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import Lightbox from '@/components/gallery/Lightbox'
+import TypeCards from '@/components/sections/TypeCards'
 
 export const metadata: Metadata = {
   title: 'Events | Premium Event Decor in Dubai | Firenze Flora',
   description: 'Corporate, private, and brand event decor in Dubai. Birthday parties, anniversaries, corporate galas, openings. Creative concept, flawless setup.',
 }
 
-const eventTypes = [
-  'Private Parties', 'Corporate Events', 'Brand Activations', 'Product Launches',
-  'Openings & Ceremonies', 'Birthdays', 'Anniversaries', 'Baby Showers', 'Proposals', 'Graduations',
+const eventTypeCards = [
+  { name: 'Private Parties',      image: '/images/portfolio/private-event.webp' },
+  { name: 'Corporate Events',     image: '/images/portfolio/corporate-hero.webp' },
+  { name: 'Brand Activations',    image: '/images/portfolio/brand-activation.webp' },
+  { name: 'Product Launches',     image: '/images/portfolio/soft-opening.webp' },
+  { name: 'Openings & Ceremonies',image: '/images/portfolio/brand-wall.webp' },
+  { name: 'Birthdays',            image: '/images/portfolio/birthday-event.webp' },
+  { name: 'Anniversaries',        image: '/images/portfolio/anniversary-event.webp' },
+  { name: 'Baby Showers',         image: '/images/portfolio/reception-decor/reception-decor-01.webp' },
+  { name: 'Proposals',            image: '/images/portfolio/proposal-event.webp' },
+  { name: 'Graduations',          image: '/images/portfolio/theme-party.webp' },
 ]
 
 const faqs = [
@@ -71,7 +80,7 @@ export default function EventsPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-4">
           <h1 className="font-display text-display-lg text-[#F5F0E8]">Events</h1>
-          <p className="font-body text-base text-[#F5F0E8]/60 mt-4 max-w-xl mx-auto">
+          <p className="font-body text-lg text-[#F5F0E8]/90 mt-4 max-w-xl mx-auto">
             Corporate galas, private celebrations, brand activations. We bring every event to life.
           </p>
         </div>
@@ -80,7 +89,7 @@ export default function EventsPage() {
       {/* Intro */}
       <section className="bg-[#0A0A0A] py-24">
         <div className="container-site max-w-2xl mx-auto text-center">
-          <p className="font-body text-base text-[#8C8279] leading-relaxed">
+          <p className="font-body text-lg text-[#B0A89E] leading-[1.85]">
             Firenze Flora handles events of every scale — from intimate private gatherings to large-scale
             corporate productions. Our team manages everything: concept, florals, decor, setup, and breakdown.
             One call is all it takes.
@@ -89,23 +98,7 @@ export default function EventsPage() {
       </section>
 
       {/* Event types */}
-      <section className="bg-[#141414] py-16">
-        <div className="container-site">
-          <h2 className="font-display text-display-sm text-[#F5F0E8] text-center mb-12">
-            Events we cover
-          </h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {eventTypes.map(type => (
-              <span
-                key={type}
-                className="border border-[#242424] px-5 py-2.5 text-sm text-[#8C8279] font-body hover:border-[#B8963E] hover:text-[#F5F0E8] transition-all duration-200"
-              >
-                {type}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TypeCards heading="Events we cover" cards={eventTypeCards} />
 
       {/* Gallery */}
       <section className="bg-[#0A0A0A] py-24">

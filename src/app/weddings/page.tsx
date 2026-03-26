@@ -3,14 +3,19 @@ import Image from 'next/image'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import Lightbox from '@/components/gallery/Lightbox'
+import TypeCards from '@/components/sections/TypeCards'
 
 export const metadata: Metadata = {
   title: 'Weddings | Wedding Decor in Dubai | Firenze Flora',
   description: 'Premium wedding floral decor in Dubai. Arabic, Indian, Iranian, Western & destination weddings. Enquire today.',
 }
 
-const weddingTypes = [
-  'Arabic Weddings', 'Indian Weddings', 'Iranian Weddings', 'Western Weddings', 'Destination Weddings',
+const weddingTypeCards = [
+  { name: 'Arabic Weddings',      image: '/images/portfolio/arabic-wedding/arabic-wedding-01.webp' },
+  { name: 'Indian Weddings',      image: '/images/portfolio/indian-wedding/indian-wedding-01.webp' },
+  { name: 'Iranian Weddings',     image: '/images/portfolio/iranian-wedding/iranian-wedding-01.webp' },
+  { name: 'Western Weddings',     image: '/images/portfolio/centrepiece/centrepiece-01.webp' },
+  { name: 'Destination Weddings', image: '/images/portfolio/flower-arch/flower-arch-01.webp' },
 ]
 
 const faqs = [
@@ -61,7 +66,7 @@ export default function WeddingsPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-4">
           <h1 className="font-display text-display-lg text-[#F5F0E8]">Weddings</h1>
-          <p className="font-body text-base text-[#F5F0E8]/60 mt-4 max-w-xl mx-auto">
+          <p className="font-body text-lg text-[#F5F0E8]/90 mt-4 max-w-xl mx-auto">
             From intimate ceremonies to grand celebrations. Every culture, every detail, flawlessly executed in Dubai.
           </p>
         </div>
@@ -70,7 +75,7 @@ export default function WeddingsPage() {
       {/* Intro */}
       <section className="bg-[#0A0A0A] py-24">
         <div className="container-site max-w-2xl mx-auto text-center">
-          <p className="font-body text-base text-[#8C8279] leading-relaxed">
+          <p className="font-body text-lg text-[#B0A89E] leading-[1.85]">
             Firenze Flora has been crafting wedding florals in Dubai for over 14 years. We work across all cultures
             and styles — bringing the same level of precision and passion to every event, regardless of scale.
             We import flowers directly from Holland to ensure every arrangement is fresh and distinctive.
@@ -79,23 +84,7 @@ export default function WeddingsPage() {
       </section>
 
       {/* Wedding types */}
-      <section className="bg-[#141414] py-16">
-        <div className="container-site">
-          <h2 className="font-display text-display-sm text-[#F5F0E8] text-center mb-12">
-            Weddings we specialise in
-          </h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {weddingTypes.map(type => (
-              <span
-                key={type}
-                className="border border-[#242424] px-5 py-2.5 text-sm text-[#8C8279] font-body hover:border-[#B8963E] hover:text-[#F5F0E8] transition-all duration-200"
-              >
-                {type}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TypeCards heading="Weddings we specialise in" cards={weddingTypeCards} />
 
       {/* Gallery */}
       <section className="bg-[#0A0A0A] py-24">

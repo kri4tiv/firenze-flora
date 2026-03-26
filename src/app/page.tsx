@@ -1,23 +1,13 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
 import { TESTIMONIALS, SITE } from '@/lib/content'
+import HomepageHero from '@/components/sections/HomepageHero'
 
 export const metadata: Metadata = {
   title: 'Firenze Flora | Wedding & Event Decor in Dubai',
   description: 'Premium floral and event decor studio in Dubai. Bespoke wedding styling, corporate events, and private celebrations. Enquire today.',
 }
-
-const galleryImages = [
-  { src: '/images/portfolio/arabic-wedding/arabic-wedding-01.webp', alt: 'Arabic wedding floral decor Dubai', colSpan: true },
-  { src: '/images/portfolio/indian-wedding/indian-wedding-01.webp',  alt: 'Indian wedding florals Dubai' },
-  { src: '/images/portfolio/centrepiece/centrepiece-01.webp',        alt: 'Wedding centrepiece Dubai' },
-  { src: '/images/portfolio/flower-arch/flower-arch-01.webp',        alt: 'Flower arch Dubai' },
-  { src: '/images/portfolio/reception-decor/reception-decor-01.webp',alt: 'Reception decor Dubai' },
-  { src: '/images/portfolio/iranian-wedding/iranian-wedding-01.webp',alt: 'Iranian wedding Dubai' },
-  { src: '/images/portfolio/corporate-hero.webp',                    alt: 'Corporate event florals Dubai' },
-  { src: '/images/portfolio/bridal-bouquet.webp',                    alt: 'Bridal bouquet Dubai' },
-]
 
 const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`
 
@@ -25,40 +15,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── 1. HERO ── */}
-      <section className="relative h-screen min-h-[600px] flex items-end overflow-hidden">
-        <Image
-          src="/images/portfolio/arabic-wedding/arabic-wedding-01.webp"
-          alt="Firenze Flora — wedding decor Dubai"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 container-site pb-16 md:pb-24 w-full">
-          <h1 className="font-display text-display-xl text-[#FDFCFA] mb-5 max-w-4xl leading-[1.05]">
-            Where flowers<br />
-            <em>tell your story.</em>
-          </h1>
-          <p className="font-body text-base text-[#F5F0E8]/60 mb-8">
-            Premium floral and event decor. Dubai.
-          </p>
-          <div className="flex flex-col sm:flex-row items-start gap-4">
-            <Link
-              href="/enquire"
-              className="px-7 py-3 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] transition-colors"
-            >
-              Enquire Now
-            </Link>
-            <Link
-              href="/gallery"
-              className="px-7 py-3 border border-white/30 text-white font-body text-sm tracking-widest uppercase hover:border-white/70 transition-colors"
-            >
-              View Gallery
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HomepageHero />
 
       {/* ── 2. BRAND STATEMENT ── */}
       <section className="bg-[#141414] py-24 md:py-32">
@@ -84,10 +41,10 @@ export default function HomePage() {
             alt="Wedding decor Dubai"
             fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700" />
-          <div className="absolute bottom-0 left-0 p-10 md:p-14">
-            <p className="font-body text-xs tracking-[0.2em] uppercase text-[#B8963E] mb-3">Weddings</p>
-            <h2 className="font-display text-display-md text-white leading-tight">
+          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-700" />
+          <div className="absolute bottom-0 left-0 p-10 md:p-14" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
+            <p className="font-body text-lg tracking-[0.2em] uppercase text-white mb-3">Weddings</p>
+            <h2 className="font-display text-display-md text-white font-[600] leading-tight">
               Where your story begins.
             </h2>
             <span className="block font-body text-sm text-white/70 group-hover:text-white mt-4 transition-colors">
@@ -103,10 +60,10 @@ export default function HomePage() {
             alt="Event decor Dubai"
             fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700" />
-          <div className="absolute bottom-0 left-0 p-10 md:p-14">
-            <p className="font-body text-xs tracking-[0.2em] uppercase text-[#B8963E] mb-3">Events</p>
-            <h2 className="font-display text-display-md text-white leading-tight">
+          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-700" />
+          <div className="absolute bottom-0 left-0 p-10 md:p-14" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
+            <p className="font-body text-lg tracking-[0.2em] uppercase text-white mb-3">Events</p>
+            <h2 className="font-display text-display-md text-white font-[600] leading-tight">
               Every moment, perfected.
             </h2>
             <span className="block font-body text-sm text-white/70 group-hover:text-white mt-4 transition-colors">
@@ -116,38 +73,7 @@ export default function HomePage() {
         </Link>
       </div>
 
-      {/* ── 4. GALLERY PREVIEW ── */}
-      <section className="bg-[#141414] py-24">
-        <div className="container-site">
-          <div className="flex items-end justify-between mb-10">
-            <h2 className="font-display text-display-md text-[#F5F0E8]">Selected Work</h2>
-            <Link href="/gallery" className="font-body text-sm text-[#B8963E] hover:text-[#D4B062] transition-colors">
-              View All →
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            {galleryImages.map((img, i) => (
-              <div
-                key={img.src}
-                className={`overflow-hidden group ${(img as { colSpan?: boolean }).colSpan ? 'col-span-2 aspect-[16/9]' : 'aspect-square'}`}
-              >
-                <div className="relative w-full h-full">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. TESTIMONIALS ── */}
+      {/* ── 4. TESTIMONIALS ── */}
       <section className="bg-[#0A0A0A] py-24">
         <div className="container-site">
           <h2 className="font-display text-display-md text-[#F5F0E8] mb-16">What clients say</h2>
@@ -172,7 +98,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 6. CTA STRIP ── */}
+      {/* ── 5. CTA STRIP ── */}
       <section className="bg-[#B8963E] py-20 text-center">
         <div className="container-site">
           <h2 className="font-display text-display-md text-[#0A0A0A]">
