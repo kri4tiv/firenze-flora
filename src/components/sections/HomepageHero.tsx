@@ -6,9 +6,8 @@ export default function HomepageHero() {
   return (
     <section
       className="relative h-screen min-h-[600px] flex items-end overflow-hidden"
-      style={{ backgroundColor: '#1a0a0a' }}
+      style={{ backgroundColor: '#111' }}
     >
-      {/* VIDEO */}
       <video
         autoPlay
         muted
@@ -20,20 +19,11 @@ export default function HomepageHero() {
         style={{ zIndex: 0 }}
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
-        <source src="/videos/hero.webm" type="video/webm" />
       </video>
 
-      {/* OVERLAY */}
-      <div
-        className="absolute inset-0 bg-black/50"
-        style={{ zIndex: 1 }}
-      />
+      <div className="absolute inset-0 bg-black/45" style={{ zIndex: 1 }} />
 
-      {/* CONTENT */}
-      <div
-        className="relative w-full max-w-5xl px-6 md:px-16 lg:px-24 pb-20 md:pb-28"
-        style={{ zIndex: 2 }}
-      >
+      <div className="relative w-full max-w-5xl px-6 md:px-16 lg:px-24 pb-20 md:pb-28" style={{ zIndex: 2 }}>
         <h1 className="font-display text-[clamp(3.6rem,8.8vw,8rem)] leading-[0.95] tracking-[-0.03em] text-white mb-6">
           Where flowers<br />
           <em>tell your story.</em>
