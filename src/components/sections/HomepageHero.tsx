@@ -16,7 +16,7 @@ export default function HomepageHero() {
         preload="auto"
         poster="/images/heroes/hero-weddings.webp"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
+        style={{ zIndex: 0, filter: 'blur(1.5px)' }}
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
