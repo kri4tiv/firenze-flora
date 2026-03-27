@@ -18,7 +18,7 @@ export default function HomepageHero() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ zIndex: 0, filter: 'blur(1.5px)' }}
       >
-        <source src="/videos/hero.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dpnfzkl8n/video/upload/herovideo101_hghzzs.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-black/45" style={{ zIndex: 1 }} />
