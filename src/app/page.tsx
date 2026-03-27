@@ -37,7 +37,7 @@ export default function HomePage() {
         {/* Card 1 — Weddings */}
         <Link href="/weddings" className="relative flex-1 min-h-[70vh] group block overflow-hidden">
           <Image
-            src="/images/portfolio/arabic-wedding/arabic-wedding-01.webp"
+            src="/images/heroes/hero-weddings.webp"
             alt="Wedding decor Dubai"
             fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw"
           />
@@ -56,7 +56,7 @@ export default function HomePage() {
         {/* Card 2 — Events */}
         <Link href="/events" className="relative flex-1 min-h-[70vh] group block overflow-hidden">
           <Image
-            src="/images/portfolio/corporate-hero.webp"
+            src="/images/heroes/hero-events.webp"
             alt="Event decor Dubai"
             fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw"
           />

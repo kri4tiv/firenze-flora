@@ -22,7 +22,7 @@ export default function HomepageHero() {
             playsInline
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
-            poster="/images/portfolio/arabic-wedding/arabic-wedding-01.webp"
+            poster="/images/heroes/hero-weddings.webp"
           >
             <source src="/videos/hero.webm" type="video/webm" />
             <source src="/videos/hero.mp4" type="video/mp4" />
