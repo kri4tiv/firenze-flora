@@ -4,11 +4,19 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 64, 96, 128, 256],
-    remotePatterns: [
-      { protocol: 'https', hostname: 'picsum.photos' },
-      { protocol: 'https', hostname: 'firenze-flora.vercel.app' },
-    ],
+    imageSizes: [16, 32, 64, 96, 128, 256, 384],
+  },
+  async headers() {
+    return [
+      {
+        source: '/videos/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
+      {
+        source: '/images/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
+    ]
   },
   async redirects() {
     return [
@@ -16,16 +24,15 @@ const nextConfig = {
       { source: '/services/events',   destination: '/events',   permanent: true },
       { source: '/services',          destination: '/',         permanent: true },
       { source: '/blog',              destination: '/',         permanent: true },
-      { source: '/blog/:slug',        destination: '/',         permanent: true },
       { source: '/stories',           destination: '/',         permanent: true },
-      { source: '/stories/:slug',     destination: '/',         permanent: true },
-      { source: '/packages',          destination: '/enquire',  permanent: true },
-      { source: '/about-us',          destination: '/about',    permanent: true },
-      { source: '/contact-us',        destination: '/contact',  permanent: true },
       { source: '/work',              destination: '/',         permanent: true },
       { source: '/gallery',           destination: '/',         permanent: true },
-    ];
+      { source: '/packages',          destination: '/enquire',  permanent: true },
+    ]
   },
-};
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans, Cormorant_SC } from 'next/font/google'
+import { Playfair_Display, Inter } from 'next/font/google'
 import '../styles/globals.css'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
@@ -7,25 +7,18 @@ import WhatsAppButton from '@/components/ui/WhatsAppButton'
 import CustomCursor from '@/components/ui/CustomCursor'
 import PageLoader from '@/components/ui/PageLoader'
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
   variable: '--font-body',
-  display: 'swap',
-})
-
-const cormorantSC = Cormorant_SC({
-  subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-accent',
   display: 'swap',
 })
 
@@ -44,16 +37,16 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/hero/hero-poster.webp',
+        url: '/images/heroes/hero-weddings.webp',
         width: 1200,
         height: 630,
-        alt: 'Firenze Flora — Premium Floral & Event Decor Dubai',
+        alt: 'Firenze Flora Premium Floral and Event Decor Dubai',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/hero/hero-poster.webp'],
+    images: ['/images/heroes/hero-weddings.webp'],
   },
   robots: {
     index: true,
@@ -64,6 +57,12 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0A0A0A',
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -72,7 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${dmSans.variable} ${cormorantSC.variable}`}
+      className={`${playfair.variable} ${inter.variable}`}
     >
       <body>
         <PageLoader />

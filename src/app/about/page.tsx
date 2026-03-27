@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import HeroSection from '@/components/ui/HeroSection'
 import StatsStrip from '@/components/sections/StatsStrip'
 import CTAStrip from '@/components/sections/CTAStrip'
 import TeamGrid from '@/components/sections/TeamGrid'
@@ -13,15 +14,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <div className="bg-[#0A0A0A] pt-40 pb-24">
-        <div className="container-site">
-          <h1 className="font-display text-display-lg text-[#F5F0E8]">About</h1>
-          <p className="font-display text-display-sm text-[#F5F0E8]/70 italic mt-4">
-            We don&apos;t decorate spaces. We compose experiences.
-          </p>
-        </div>
-      </div>
+      <HeroSection
+        title="About"
+        subtitle="14 years. 5,000+ events. One obsession."
+        imagePath="/images/heroes/hero-about.webp"
+        imageAlt="Firenze Flora team Dubai"
+      />
 
       {/* Brand story — 2 col */}
       <section className="bg-[#141414] py-24">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import HeroSection from '@/components/ui/HeroSection'
 import EnquireForm from '@/components/forms/EnquireForm'
 
 export const metadata: Metadata = {
@@ -8,14 +9,18 @@ export const metadata: Metadata = {
 
 export default function EnquirePage() {
   return (
-    <div className="bg-[#0A0A0A] min-h-screen">
-      <div className="container-site max-w-xl mx-auto pt-40 pb-20">
-        <h1 className="font-display text-display-lg text-[#F5F0E8] mb-4">Enquire</h1>
-        <p className="font-body text-base text-[#8C8279] mt-4 mb-12">
-          We respond within 24 hours.
-        </p>
-        <EnquireForm />
+    <>
+      <HeroSection
+        title="Enquire"
+        subtitle="Tell us your vision. We respond within 24 hours."
+        imagePath="/images/heroes/hero-enquire.webp"
+        imageAlt="Enquire about floral decor Dubai"
+      />
+      <div className="bg-[#0A0A0A]">
+        <div className="container-site max-w-xl mx-auto py-20">
+          <EnquireForm />
+        </div>
       </div>
-    </div>
+    </>
   )
 }

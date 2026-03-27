@@ -22,7 +22,7 @@ export default function HomePage() {
         <div className="container-site max-w-3xl mx-auto text-center">
           <p className="font-display text-display-sm text-[#F5F0E8]/90 italic leading-snug">
             &ldquo;At Firenze Flora, we possess the artistry and passion to craft the extraordinary.
-            Whether it&apos;s a wedding, a corporate event, or a private celebration — we transform
+            Whether it&apos;s a wedding, a corporate event, or a private celebration, we transform
             your vision into reality.&rdquo;
           </p>
           <div className="w-[60px] h-px bg-[#B8963E] mx-auto my-8" />

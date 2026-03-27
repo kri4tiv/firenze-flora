@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import HeroSection from '@/components/ui/HeroSection'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import TypeCards from '@/components/sections/TypeCards'
@@ -12,25 +12,25 @@ const Lightbox = dynamic(() => import('@/components/gallery/Lightbox'), {
 
 export const metadata: Metadata = {
   title: 'Weddings | Wedding Decor in Dubai | Firenze Flora',
-  description: 'Premium wedding floral decor in Dubai. Arabic, Indian, Iranian, Western & destination weddings. Enquire today.',
+  description: 'Premium wedding floral decor in Dubai. Arabic, Indian, Iranian, Western and destination weddings. Enquire today.',
 }
 
 const weddingTypeCards = [
-  { name: 'Arabic Weddings',      image: '/images/portfolio/arabic-wedding/arabic-wedding-01.webp' },
-  { name: 'Indian Weddings',      image: '/images/portfolio/indian-wedding/indian-wedding-01.webp' },
-  { name: 'Iranian Weddings',     image: '/images/portfolio/iranian-wedding/iranian-wedding-01.webp' },
-  { name: 'Western Weddings',     image: '/images/portfolio/centrepiece/centrepiece-01.webp' },
+  { name: 'Arabic Weddings',      image: '/images/type-cards/weddings-arabic.webp' },
+  { name: 'Indian Weddings',      image: '/images/type-cards/weddings-indian.webp' },
+  { name: 'Iranian Weddings',     image: '/images/type-cards/weddings-iranian.webp' },
+  { name: 'Western Weddings',     image: '/images/type-cards/weddings-western.webp' },
   { name: 'Destination Weddings', image: '/images/portfolio/flower-arch/flower-arch-01.webp' },
 ]
 
 const faqs = [
   {
     question: 'How far in advance should I book?',
-    answer: 'We recommend 3–6 months for wedding dates. Peak season October–April books quickly.',
+    answer: 'We recommend 3 to 6 months for wedding dates. Peak season, October to April, books quickly.',
   },
   {
     question: 'Do you handle setup and breakdown?',
-    answer: 'Yes — full delivery, setup, and post-event breakdown at your Dubai venue.',
+    answer: 'Yes. Full delivery, setup, and post-event breakdown at your Dubai venue.',
   },
   {
     question: 'Fresh or artificial flowers?',
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'Do you cover all of Dubai?',
-    answer: 'Yes — all major venues including Jumeirah, DIFC, Palm, Downtown, Madinat, and beyond.',
+    answer: 'Yes. All major venues including Jumeirah, DIFC, Palm, Downtown, Madinat, and beyond.',
   },
 ]
 
@@ -49,7 +49,7 @@ function makeImages(folder: string, count: number, altText: string) {
   }))
 }
 
-// 5 images × 6 folders = 30 images
+// 5 images x 6 folders = 30 images
 const galleryImages = [
   ...makeImages('arabic-wedding',  5, 'Arabic wedding floral decor Dubai'),
   ...makeImages('indian-wedding',  5, 'Indian wedding decor Dubai'),
@@ -62,28 +62,19 @@ const galleryImages = [
 export default function WeddingsPage() {
   return (
     <>
-      {/* Hero */}
-      <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/portfolio/arabic-wedding/arabic-wedding-01.webp"
-          alt="Wedding decor Dubai"
-          fill className="object-cover" priority sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="font-display text-display-lg text-[#F5F0E8]">Weddings</h1>
-          <p className="font-body text-lg text-[#F5F0E8]/90 mt-4 max-w-xl mx-auto">
-            From intimate ceremonies to grand celebrations. Every culture, every detail, flawlessly executed in Dubai.
-          </p>
-        </div>
-      </div>
+      <HeroSection
+        title="Weddings"
+        subtitle="From intimate ceremonies to grand celebrations. Every culture, every detail, flawlessly executed in Dubai."
+        imagePath="/images/heroes/hero-weddings.webp"
+        imageAlt="Wedding floral decor Dubai"
+      />
 
       {/* Intro */}
       <section className="bg-[#0A0A0A] py-24">
         <div className="container-site max-w-2xl mx-auto text-center">
           <p className="font-body text-lg text-[#B0A89E] leading-[1.85]">
             Firenze Flora has been crafting wedding florals in Dubai for over 14 years. We work across all cultures
-            and styles — bringing the same level of precision and passion to every event, regardless of scale.
+            and styles, bringing the same level of precision and passion to every event, regardless of scale.
             We import flowers directly from Holland to ensure every arrangement is fresh and distinctive.
           </p>
         </div>

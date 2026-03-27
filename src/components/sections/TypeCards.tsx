@@ -28,11 +28,6 @@ const textVariants = {
   hover: { y: -4, transition: { duration: 0.3 } },
 }
 
-const arrowVariants = {
-  rest:  { opacity: 0, x: -8 },
-  hover: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-}
-
 export default function TypeCards({ heading, cards }: TypeCardsProps) {
   return (
     <LazyMotion features={domAnimation}>
@@ -51,7 +46,7 @@ export default function TypeCards({ heading, cards }: TypeCardsProps) {
                 transition={{ duration: 0.5, delay: i * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
                 animate="rest"
                 whileHover="hover"
-                className="relative aspect-[3/4] overflow-hidden cursor-pointer"
+                className="relative aspect-[3/4] overflow-hidden"
               >
                 {/* Image */}
                 <motion.div className="absolute inset-0" variants={imageVariants}>
@@ -76,12 +71,6 @@ export default function TypeCards({ heading, cards }: TypeCardsProps) {
                 {/* Text */}
                 <motion.div className="absolute bottom-0 left-0 p-5" variants={textVariants}>
                   <span className="font-display text-xl text-white font-[500] block">{card.name}</span>
-                  <motion.span
-                    className="block text-[#B8963E] text-sm mt-1"
-                    variants={arrowVariants}
-                  >
-                    Explore →
-                  </motion.span>
                 </motion.div>
               </motion.div>
             ))}

@@ -21,7 +21,6 @@ const config: Config = {
           DEFAULT: '#B8963E',
           light: '#D4B062',
         },
-        // Petal accent colours — use sparingly
         magenta: '#D4006E',
         purple:  '#6B2D8B',
         leaf:    '#2E7D3A',
@@ -30,15 +29,16 @@ const config: Config = {
         white:   '#FDFCFA',
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'Georgia', 'serif'],
-        body:    ['DM Sans', 'system-ui', 'sans-serif'],
-        accent:  ['Cormorant SC', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        body:    ['var(--font-body)', 'system-ui', 'sans-serif'],
+        accent:  ['var(--font-display)', 'Georgia', 'serif'],
       },
       fontSize: {
-        'display-xl': ['clamp(4rem, 10vw, 9rem)',      { lineHeight: '1.02', letterSpacing: '-0.03em' }],
-        'display-lg': ['clamp(3rem, 7vw, 6rem)',       { lineHeight: '1.08', letterSpacing: '-0.02em' }],
-        'display-md': ['clamp(2.4rem, 5vw, 4rem)',     { lineHeight: '1.12', letterSpacing: '-0.02em' }],
-        'display-sm': ['clamp(1.8rem, 3.5vw, 2.8rem)', { lineHeight: '1.2',  letterSpacing: '-0.01em' }],
+        'display-xl':    ['clamp(4rem, 10vw, 9rem)',       { lineHeight: '0.95', letterSpacing: '-0.03em' }],
+        'display-xl-sm': ['clamp(3.2rem, 8vw, 7.2rem)',    { lineHeight: '0.95', letterSpacing: '-0.03em' }],
+        'display-lg':    ['clamp(3rem, 7vw, 6rem)',        { lineHeight: '1.08', letterSpacing: '-0.02em' }],
+        'display-md':    ['clamp(2.4rem, 5vw, 4rem)',      { lineHeight: '1.12', letterSpacing: '-0.02em' }],
+        'display-sm':    ['clamp(1.8rem, 3.5vw, 2.8rem)',  { lineHeight: '1.2',  letterSpacing: '-0.01em' }],
       },
       spacing: {
         'section':    '8rem',

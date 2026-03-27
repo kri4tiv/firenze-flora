@@ -13,9 +13,7 @@
   --cream:      #F5F0E8;
   --stone:      #8C8279;
   --muted:      #4A4540;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
-  --font-accent:  'Cormorant SC', Georgia, serif;
+  /* Font vars are injected by next/font via CSS variables --font-display and --font-body */
   --easing-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 

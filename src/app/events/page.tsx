@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import HeroSection from '@/components/ui/HeroSection'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import TypeCards from '@/components/sections/TypeCards'
@@ -16,16 +16,15 @@ export const metadata: Metadata = {
 }
 
 const eventTypeCards = [
-  { name: 'Private Parties',       image: '/images/portfolio/private-event.webp' },
-  { name: 'Corporate Events',      image: '/images/portfolio/corporate-hero.webp' },
-  { name: 'Brand Activations',     image: '/images/portfolio/brand-activation.webp' },
-  { name: 'Product Launches',      image: '/images/portfolio/soft-opening.webp' },
-  { name: 'Openings & Ceremonies', image: '/images/portfolio/brand-wall.webp' },
-  { name: 'Birthdays',             image: '/images/portfolio/birthday-event.webp' },
-  { name: 'Anniversaries',         image: '/images/portfolio/anniversary-event.webp' },
-  { name: 'Baby Showers',          image: '/images/portfolio/reception-decor/reception-decor-01.webp' },
-  { name: 'Proposals',             image: '/images/portfolio/proposal-event.webp' },
-  { name: 'Graduations',           image: '/images/portfolio/theme-party.webp' },
+  { name: 'Private Parties',       image: '/images/type-cards/events-private.webp' },
+  { name: 'Corporate Events',      image: '/images/type-cards/events-corporate.webp' },
+  { name: 'Brand Activations',     image: '/images/type-cards/events-brand.webp' },
+  { name: 'Product Launches',      image: '/images/type-cards/events-product-launches.webp' },
+  { name: 'Openings & Ceremonies', image: '/images/type-cards/events-opening.webp' },
+  { name: 'Birthdays',             image: '/images/type-cards/events-birthdays.webp' },
+  { name: 'Anniversaries',         image: '/images/type-cards/events-anniversary.webp' },
+  { name: 'Baby Showers',          image: '/images/type-cards/events-babyshower.webp' },
+  { name: 'Proposals',             image: '/images/type-cards/events-proposals.webp' },
 ]
 
 const faqs = [
@@ -35,15 +34,15 @@ const faqs = [
   },
   {
     question: 'Do you handle concept and design?',
-    answer: 'Yes — full concept development, material sourcing, professional setup, and post-event breakdown.',
+    answer: 'Yes. Full concept development, material sourcing, professional setup, and post-event breakdown.',
   },
   {
     question: 'How quickly can you turn around an event?',
-    answer: 'For smaller events, we can often accommodate 2–3 weeks notice. Larger productions require 4–8 weeks.',
+    answer: 'For smaller events, we can often accommodate 2 to 3 weeks notice. Larger productions require 4 to 8 weeks.',
   },
   {
     question: 'Do you work with corporate clients?',
-    answer: 'Yes — we have extensive experience with corporate galas, brand activations, product launches, and opening ceremonies.',
+    answer: 'Yes. We have extensive experience with corporate galas, brand activations, product launches, and opening ceremonies.',
   },
 ]
 
@@ -65,27 +64,18 @@ const galleryImages = [
 export default function EventsPage() {
   return (
     <>
-      {/* Hero */}
-      <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/portfolio/corporate-hero.webp"
-          alt="Event decor Dubai"
-          fill className="object-cover" priority sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="font-display text-display-lg text-[#F5F0E8]">Events</h1>
-          <p className="font-body text-lg text-[#F5F0E8]/90 mt-4 max-w-xl mx-auto">
-            Corporate galas, private celebrations, brand activations. We bring every event to life.
-          </p>
-        </div>
-      </div>
+      <HeroSection
+        title="Events"
+        subtitle="Corporate galas, private celebrations, brand activations. We bring every event to life."
+        imagePath="/images/heroes/hero-events.webp"
+        imageAlt="Event decor Dubai"
+      />
 
       {/* Intro */}
       <section className="bg-[#0A0A0A] py-24">
         <div className="container-site max-w-2xl mx-auto text-center">
           <p className="font-body text-lg text-[#B0A89E] leading-[1.85]">
-            Firenze Flora handles events of every scale — from intimate private gatherings to large-scale
+            Firenze Flora handles events of every scale, from intimate private gatherings to large-scale
             corporate productions. Our team manages everything: concept, florals, decor, setup, and breakdown.
             One call is all it takes.
           </p>
