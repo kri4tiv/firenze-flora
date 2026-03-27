@@ -1,14 +1,27 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 export default function HomepageHero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    video.muted = true
+    video.play().catch((err) => {
+      console.warn('Autoplay failed:', err)
+    })
+  }, [])
+
   return (
     <section
       className="relative h-screen min-h-[600px] flex items-end overflow-hidden"
       style={{ backgroundColor: '#111' }}
     >
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
