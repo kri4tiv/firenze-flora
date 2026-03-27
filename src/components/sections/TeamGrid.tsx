@@ -19,7 +19,7 @@ const photoVariants = {
 
 const nameVariants = {
   rest:  { color: '#F5F0E8' },
-  hover: { color: '#B8963E', transition: { duration: 0.3 } },
+  hover: { color: '#D4A5B5', transition: { duration: 0.3 } },
 }
 
 export default function TeamGrid() {

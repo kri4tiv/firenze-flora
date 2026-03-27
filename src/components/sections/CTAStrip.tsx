@@ -3,7 +3,7 @@ import { SITE } from '@/lib/content'
 
 export default function CTAStrip() {
   return (
-    <section className="bg-[#B8963E] py-20 text-center">
+    <section className="bg-gradient-to-r from-[#B8849A] to-[#E8C4D0] py-20 text-center">
       <div className="container-site">
         <h2 className="font-display text-display-md text-[#0A0A0A]">
           Ready to create something extraordinary?

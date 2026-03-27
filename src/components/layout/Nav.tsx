@@ -123,7 +123,7 @@ export default function Nav() {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 48, opacity: 1 }}
                   transition={{ delay: 0.1, duration: 0.4 }}
-                  className="w-px bg-[#B8963E] mb-6 self-end"
+                  className="w-px bg-[#D4A5B5] mb-6 self-end"
                 />
 
                 {navLinks.map((link, i) => {
@@ -139,7 +139,7 @@ export default function Nav() {
                         href={link.href}
                         onClick={() => setMenuOpen(false)}
                         className={`font-body text-2xl md:text-3xl font-[300] tracking-wide block py-1.5 transition-colors duration-200 ${
-                          isActive ? 'text-[#B8963E]' : 'text-[#F5F0E8]/50 hover:text-[#F5F0E8]'
+                          isActive ? 'text-[#D4A5B5]' : 'text-[#F5F0E8]/50 hover:text-[#F5F0E8]'
                         }`}
                       >
                         {link.label}

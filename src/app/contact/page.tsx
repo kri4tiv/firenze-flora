@@ -26,19 +26,19 @@ export default function ContactPage() {
             <div className="mt-10 space-y-8">
               <div>
                 <p className="font-body text-xs tracking-widest uppercase text-[#4A4540] mb-1">Phone</p>
-                <a href={`tel:${SITE.phoneTel}`} className="font-body text-base text-[#F5F0E8] hover:text-[#B8963E] transition-colors">
+                <a href={`tel:${SITE.phoneTel}`} className="font-body text-base text-[#F5F0E8] hover:text-[#D4A5B5] transition-colors">
                   {SITE.phoneDisplay}
                 </a>
               </div>
               <div>
                 <p className="font-body text-xs tracking-widest uppercase text-[#4A4540] mb-1">Email</p>
-                <a href={`mailto:${SITE.email}`} className="font-body text-base text-[#F5F0E8] hover:text-[#B8963E] transition-colors">
+                <a href={`mailto:${SITE.email}`} className="font-body text-base text-[#F5F0E8] hover:text-[#D4A5B5] transition-colors">
                   {SITE.email}
                 </a>
               </div>
               <div>
                 <p className="font-body text-xs tracking-widest uppercase text-[#4A4540] mb-1">WhatsApp</p>
-                <a href={waUrl} target="_blank" rel="noopener noreferrer" className="font-body text-base text-[#B8963E] hover:text-[#D4B062] transition-colors">
+                <a href={waUrl} target="_blank" rel="noopener noreferrer" className="font-body text-base text-[#D4A5B5] hover:text-[#E8C4D0] transition-colors">
                   Chat with us →
                 </a>
               </div>

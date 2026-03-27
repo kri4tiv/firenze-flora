@@ -7,7 +7,7 @@ function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex gap-1 mb-5" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: rating }).map((_, i) => (
-        <span key={i} className="text-[#B8963E] text-sm" aria-hidden="true">★</span>
+        <span key={i} className="text-[#D4A5B5] text-sm" aria-hidden="true">★</span>
       ))}
     </div>
   )
@@ -68,7 +68,7 @@ export default function Testimonials({ dark = false }: TestimonialsProps) {
 
               <div className={`border-t ${borderColor} pt-5`}>
                 <p className={`font-body text-sm font-medium ${authorColor}`}>{t.author}</p>
-                <p className={`font-accent text-xs tracking-[0.15em] uppercase text-[#B8963E] mt-1`}>
+                <p className={`font-accent text-xs tracking-[0.15em] uppercase text-[#D4A5B5] mt-1`}>
                   {t.venue}
                 </p>
               </div>

@@ -82,7 +82,7 @@ export default function HomepagePortfolio() {
           <div className="mt-10 flex justify-center">
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 font-body text-sm text-[#B8963E] border border-[#B8963E] px-7 py-3 hover:bg-[#B8963E] hover:text-white transition-all duration-250"
+              className="inline-flex items-center gap-2 font-body text-sm text-[#D4A5B5] border border-[#D4A5B5] px-7 py-3 hover:bg-[#D4A5B5] hover:text-white transition-all duration-250"
             >
               View More →
             </Link>

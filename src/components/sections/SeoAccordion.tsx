@@ -62,11 +62,11 @@ export default function SeoAccordion() {
                 className="w-full flex items-center justify-between py-5 text-left group"
                 aria-expanded={open === i}
               >
-                <span className="font-display text-lg md:text-xl text-[#1C1C1A] group-hover:text-[#B8963E] transition-colors duration-250">
+                <span className="font-display text-lg md:text-xl text-[#1C1C1A] group-hover:text-[#D4A5B5] transition-colors duration-250">
                   {item.title}
                 </span>
                 <span
-                  className="text-[#B8963E] text-xl leading-none shrink-0 ml-4 transition-transform duration-300"
+                  className="text-[#D4A5B5] text-xl leading-none shrink-0 ml-4 transition-transform duration-300"
                   style={{ transform: open === i ? 'rotate(45deg)' : 'rotate(0deg)' }}
                   aria-hidden="true"
                 >

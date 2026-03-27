@@ -64,7 +64,7 @@ export default function TypeCards({ heading, cards }: TypeCardsProps) {
 
                 {/* Gold hover overlay */}
                 <motion.div
-                  className="absolute inset-0 bg-[#B8963E]/20"
+                  className="absolute inset-0 bg-[#D4A5B5]/20"
                   variants={overlayVariants}
                 />
 

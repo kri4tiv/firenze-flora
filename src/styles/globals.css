@@ -8,8 +8,11 @@
   --black:      #0A0A0A;
   --dark:       #141414;
   --dark-mid:   #242424;
-  --gold:       #B8963E;
-  --gold-light: #D4B062;
+  --gold:         #D4A5B5;
+  --gold-light:   #E8C4D0;
+  --accent:       #D4A5B5;
+  --accent-light: #E8C4D0;
+  --accent-dark:  #B8849A;
   --cream:      #F5F0E8;
   --stone:      #8C8279;
   --muted:      #4A4540;
@@ -48,11 +51,11 @@ a {
   text-decoration: none;
   transition: color 200ms;
 }
-a:hover { color: #B8963E; }
+a:hover { color: #D4A5B5; }
 
 p { font-size: 1rem; line-height: 1.75; }
 
-::selection { background: #B8963E; color: #0A0A0A; }
+::selection { background: #D4A5B5; color: #0A0A0A; }
 
 @layer utilities {
   .font-display { font-family: var(--font-display); }

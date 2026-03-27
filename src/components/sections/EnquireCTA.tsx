@@ -16,7 +16,7 @@ export default function EnquireCTA() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="font-accent text-[#B8963E] text-xs tracking-[0.25em] uppercase block mb-6">
+          <span className="font-accent text-[#D4A5B5] text-xs tracking-[0.25em] uppercase block mb-6">
             Based in Dubai · Available Across UAE
           </span>
           <h2 className="font-display text-display-lg text-[#FDFCFA] mb-6 max-w-2xl mx-auto">
@@ -28,7 +28,7 @@ export default function EnquireCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/enquire"
-              className="px-8 py-4 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] transition-colors duration-250"
+              className="px-8 py-4 bg-[#D4A5B5] text-white font-body text-sm tracking-widest uppercase hover:bg-[#E8C4D0] transition-colors duration-250"
             >
               Start Your Enquiry
             </Link>

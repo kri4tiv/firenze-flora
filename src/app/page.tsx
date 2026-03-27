@@ -25,7 +25,7 @@ export default function HomePage() {
             Whether it&apos;s a wedding, a corporate event, or a private celebration, we transform
             your vision into reality.&rdquo;
           </p>
-          <div className="w-[60px] h-px bg-[#B8963E] mx-auto my-8" />
+          <div className="w-[60px] h-px bg-[#D4A5B5] mx-auto my-8" />
           <p className="font-body text-sm tracking-widest text-[#8C8279] uppercase">
             14 Years &nbsp;·&nbsp; 5,000+ Events &nbsp;·&nbsp; 3,000+ Clients
           </p>
@@ -82,7 +82,7 @@ export default function HomePage() {
               <div key={t.id} className="bg-[#0A0A0A] p-10 flex flex-col">
                 <div className="flex gap-1 mb-6" aria-label={`${t.rating} stars`}>
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <span key={i} className="text-[#B8963E] text-sm" aria-hidden="true">★</span>
+                    <span key={i} className="text-[#D4A5B5] text-sm" aria-hidden="true">★</span>
                   ))}
                 </div>
                 <blockquote className="font-display text-xl italic text-[#F5F0E8]/80 leading-relaxed flex-1 mb-8">
@@ -90,7 +90,7 @@ export default function HomePage() {
                 </blockquote>
                 <div>
                   <p className="font-body text-sm font-medium text-[#F5F0E8]">{t.author}</p>
-                  <p className="font-body text-xs text-[#B8963E] tracking-wide mt-1">{t.venue}</p>
+                  <p className="font-body text-xs text-[#D4A5B5] tracking-wide mt-1">{t.venue}</p>
                 </div>
               </div>
             ))}
@@ -99,7 +99,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 5. CTA STRIP ── */}
-      <section className="bg-[#B8963E] py-20 text-center">
+      <section className="bg-gradient-to-r from-[#B8849A] to-[#E8C4D0] py-20 text-center">
         <div className="container-site">
           <h2 className="font-display text-display-md text-[#0A0A0A]">
             Ready to create something extraordinary?

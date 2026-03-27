@@ -108,7 +108,7 @@ export default function HomeServiceBlocks() {
               onClick={() => setActiveBlock(b.slug)}
               className={`font-accent text-xs tracking-[0.2em] uppercase px-6 py-3 border-b-2 transition-all duration-250 ${
                 activeBlock === b.slug
-                  ? 'border-[#B8963E] text-[#B8963E]'
+                  ? 'border-[#D4A5B5] text-[#D4A5B5]'
                   : 'border-transparent text-[#8C8279] hover:text-[#1C1C1A]'
               }`}
             >
@@ -149,7 +149,7 @@ export default function HomeServiceBlocks() {
               </p>
               <Link
                 href={block.href}
-                className="inline-flex items-center gap-2 font-body text-sm text-[#B8963E] border border-[#B8963E] px-5 py-2.5 hover:bg-[#B8963E] hover:text-white transition-all duration-250"
+                className="inline-flex items-center gap-2 font-body text-sm text-[#D4A5B5] border border-[#D4A5B5] px-5 py-2.5 hover:bg-[#D4A5B5] hover:text-white transition-all duration-250"
               >
                 Explore {block.title.charAt(0) + block.title.slice(1).toLowerCase()} →
               </Link>
@@ -174,7 +174,7 @@ export default function HomeServiceBlocks() {
                   <div className="absolute inset-0 bg-[#1C1C1A]/20 group-hover:bg-[#1C1C1A]/10 transition-colors duration-300" />
                 </div>
                 <div className="p-5">
-                  <h4 className="font-display text-lg text-[#1C1C1A] mb-2 leading-tight group-hover:text-[#B8963E] transition-colors">
+                  <h4 className="font-display text-lg text-[#1C1C1A] mb-2 leading-tight group-hover:text-[#D4A5B5] transition-colors">
                     {item.title}
                   </h4>
                   <p className="font-body text-sm font-light text-[#8C8279] leading-relaxed">

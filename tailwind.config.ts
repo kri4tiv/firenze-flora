@@ -18,8 +18,13 @@ const config: Config = {
           light: '#2E2E2C',
         },
         gold: {
-          DEFAULT: '#B8963E',
-          light: '#D4B062',
+          DEFAULT: '#D4A5B5',
+          light: '#E8C4D0',
+        },
+        accent: {
+          DEFAULT: '#D4A5B5',
+          light: '#E8C4D0',
+          dark: '#B8849A',
         },
         magenta: '#D4006E',
         purple:  '#6B2D8B',

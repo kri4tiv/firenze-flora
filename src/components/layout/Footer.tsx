@@ -40,7 +40,7 @@ export default function Footer() {
                   className="group relative text-sm text-[#8C8279] hover:text-[#F5F0E8] transition-colors duration-300"
                 >
                   {link.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#B8963E] group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#D4A5B5] group-hover:w-full transition-all duration-300" />
                 </Link>
                 {i < navLinks.length - 1 && <span className="text-[#242424]">·</span>}
               </span>
@@ -54,23 +54,23 @@ export default function Footer() {
               className="group relative block text-sm text-[#B0A89E] hover:text-[#F5F0E8] transition-colors duration-300 w-fit"
             >
               {SITE.phoneDisplay}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#B8963E] group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#D4A5B5] group-hover:w-full transition-all duration-300" />
             </a>
             <a
               href={`mailto:${SITE.email}`}
               className="group relative block text-sm text-[#B0A89E] hover:text-[#F5F0E8] transition-colors duration-300 w-fit"
             >
               {SITE.email}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#B8963E] group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#D4A5B5] group-hover:w-full transition-all duration-300" />
             </a>
             <a
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block text-sm text-[#B8963E] hover:text-[#D4B062] transition-colors duration-300 w-fit"
+              className="group relative block text-sm text-[#D4A5B5] hover:text-[#E8C4D0] transition-colors duration-300 w-fit"
             >
               WhatsApp →
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#D4B062] group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#E8C4D0] group-hover:w-full transition-all duration-300" />
             </a>
             <div className="flex gap-2 pt-2">
               <a
@@ -78,7 +78,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="p-2 border border-[#3A3A3A] text-[#8C8279] hover:border-[#B8963E] hover:text-[#B8963E] transition-all duration-300"
+                className="p-2 border border-[#3A3A3A] text-[#8C8279] hover:border-[#D4A5B5] hover:text-[#D4A5B5] transition-all duration-300"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -91,7 +91,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="p-2 border border-[#3A3A3A] text-[#8C8279] hover:border-[#B8963E] hover:text-[#B8963E] transition-all duration-300"
+                className="p-2 border border-[#3A3A3A] text-[#8C8279] hover:border-[#D4A5B5] hover:text-[#D4A5B5] transition-all duration-300"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
@@ -102,7 +102,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter / X"
-                className="p-2 border border-[#3A3A3A] text-[#8C8279] hover:border-[#B8963E] hover:text-[#B8963E] transition-all duration-300"
+                className="p-2 border border-[#3A3A3A] text-[#8C8279] hover:border-[#D4A5B5] hover:text-[#D4A5B5] transition-all duration-300"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>

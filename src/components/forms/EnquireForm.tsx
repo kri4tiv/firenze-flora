@@ -16,7 +16,7 @@ interface FormData {
 
 const eventTypes = ['Wedding', 'Birthday', 'Corporate', 'Opening', 'Anniversary', 'Other']
 
-const input = 'bg-[#141414] border border-[#242424] text-[#F5F0E8] placeholder:text-[#4A4540] px-4 py-3.5 w-full focus:outline-none focus:border-[#B8963E] transition-colors duration-200 font-body text-base'
+const input = 'bg-[#141414] border border-[#242424] text-[#F5F0E8] placeholder:text-[#4A4540] px-4 py-3.5 w-full focus:outline-none focus:border-[#D4A5B5] transition-colors duration-200 font-body text-base'
 
 export default function EnquireForm() {
   const [step,      setStep]      = useState<Step>(1)
@@ -55,14 +55,14 @@ export default function EnquireForm() {
         {([1, 2] as Step[]).map((s) => (
           <div key={s} className="flex items-center gap-3">
             <div className={`flex items-center gap-2 ${step === s ? 'opacity-100' : 'opacity-40'}`}>
-              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-body transition-all ${step >= s ? 'bg-[#B8963E] text-[#0A0A0A]' : 'border border-[#242424] text-[#8C8279]'}`}>
+              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-body transition-all ${step >= s ? 'bg-[#D4A5B5] text-[#0A0A0A]' : 'border border-[#242424] text-[#8C8279]'}`}>
                 0{s}
               </span>
               <span className="font-body text-sm text-[#8C8279] uppercase tracking-widest">
                 {s === 1 ? 'Event' : 'Contact'}
               </span>
             </div>
-            {s < 2 && <div className={`w-16 h-px ${step > 1 ? 'bg-[#B8963E]' : 'bg-[#242424]'}`} />}
+            {s < 2 && <div className={`w-16 h-px ${step > 1 ? 'bg-[#D4A5B5]' : 'bg-[#242424]'}`} />}
           </div>
         ))}
       </div>
@@ -76,8 +76,8 @@ export default function EnquireForm() {
                 onClick={() => update('eventType', type)}
                 className={`border px-4 py-2.5 text-sm font-body transition-all duration-200 ${
                   data.eventType === type
-                    ? 'border-[#B8963E] text-[#F5F0E8] bg-[#B8963E]/10'
-                    : 'border-[#242424] text-[#8C8279] hover:border-[#B8963E] hover:text-[#F5F0E8]'
+                    ? 'border-[#D4A5B5] text-[#F5F0E8] bg-[#D4A5B5]/10'
+                    : 'border-[#242424] text-[#8C8279] hover:border-[#D4A5B5] hover:text-[#F5F0E8]'
                 }`}
               >
                 {type}
@@ -100,7 +100,7 @@ export default function EnquireForm() {
           <button
             onClick={() => data.eventType && setStep(2)}
             disabled={!data.eventType}
-            className="w-full py-4 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            className="w-full py-4 bg-[#D4A5B5] text-white font-body text-sm tracking-widest uppercase hover:bg-[#E8C4D0] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
             Next →
           </button>
@@ -133,13 +133,13 @@ export default function EnquireForm() {
           <button
             onClick={() => (data.name && data.email) && setSubmitted(true)}
             disabled={!data.name || !data.email}
-            className="w-full py-4 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] disabled:opacity-40 disabled:cursor-not-allowed transition-colors mb-6"
+            className="w-full py-4 bg-[#D4A5B5] text-white font-body text-sm tracking-widest uppercase hover:bg-[#E8C4D0] disabled:opacity-40 disabled:cursor-not-allowed transition-colors mb-6"
           >
             Send Enquiry
           </button>
           <p className="text-center font-body text-sm text-[#8C8279]">
             Prefer WhatsApp?{' '}
-            <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-[#B8963E] hover:text-[#D4B062]">
+            <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-[#D4A5B5] hover:text-[#E8C4D0]">
               Chat with us →
             </a>
           </p>

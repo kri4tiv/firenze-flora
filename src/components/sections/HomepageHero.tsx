@@ -42,7 +42,7 @@ export default function HomepageHero() {
           <div className="flex flex-col sm:flex-row items-start gap-4">
             <Link
               href="/enquire"
-              className="px-7 py-3 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] transition-colors"
+              className="px-7 py-3 bg-[#D4A5B5] text-white font-body text-sm tracking-widest uppercase hover:bg-[#E8C4D0] transition-colors"
             >
               Enquire Now
             </Link>

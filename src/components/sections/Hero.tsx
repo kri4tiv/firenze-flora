@@ -34,7 +34,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse at 30% 60%, #B8963E1A 0%, transparent 60%),
+              radial-gradient(ellipse at 30% 60%, #D4A5B51A 0%, transparent 60%),
               radial-gradient(ellipse at 80% 20%, #8C827938 0%, transparent 55%),
               linear-gradient(160deg, #1C1C1A 0%, #2E2E2C 55%, #1C1C1A 100%)
             `,
@@ -43,7 +43,7 @@ export default function Hero() {
 
         <motion.div
           className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #B8963E14 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, #D4A5B514 0%, transparent 70%)' }}
           animate={prefersReduced ? {} : { scale: [1, 1.25, 1], opacity: [0.4, 0.75, 0.4] }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -58,16 +58,16 @@ export default function Hero() {
           transition={{ duration: 120, repeat: Infinity, ease: 'linear' }}
           style={{ transformOrigin: '400px 400px' }}
         >
-          <circle cx="400" cy="400" r="280" stroke="#B8963E" strokeWidth="0.5" fill="none" />
-          <circle cx="400" cy="400" r="200" stroke="#B8963E" strokeWidth="0.5" fill="none" />
-          <circle cx="400" cy="400" r="120" stroke="#B8963E" strokeWidth="0.5" fill="none" />
+          <circle cx="400" cy="400" r="280" stroke="#D4A5B5" strokeWidth="0.5" fill="none" />
+          <circle cx="400" cy="400" r="200" stroke="#D4A5B5" strokeWidth="0.5" fill="none" />
+          <circle cx="400" cy="400" r="120" stroke="#D4A5B5" strokeWidth="0.5" fill="none" />
           {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
             <line
               key={angle}
               x1="400" y1="400"
               x2={400 + 280 * Math.cos((angle * Math.PI) / 180)}
               y2={400 + 280 * Math.sin((angle * Math.PI) / 180)}
-              stroke="#B8963E" strokeWidth="0.3"
+              stroke="#D4A5B5" strokeWidth="0.3"
             />
           ))}
           {[0, 60, 120, 180, 240, 300].map((angle) => {
@@ -77,7 +77,7 @@ export default function Hero() {
               <ellipse
                 key={`p-${angle}`}
                 cx={px} cy={py} rx="18" ry="38"
-                stroke="#B8963E" strokeWidth="0.35" fill="none"
+                stroke="#D4A5B5" strokeWidth="0.35" fill="none"
                 transform={`rotate(${angle + 90}, ${px}, ${py})`}
               />
             )
@@ -125,10 +125,10 @@ export default function Hero() {
         >
           <Link
             href="/enquire"
-            className="group relative px-7 py-3.5 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase overflow-hidden"
+            className="group relative px-7 py-3.5 bg-[#D4A5B5] text-white font-body text-sm tracking-widest uppercase overflow-hidden"
           >
             <span className="relative z-10">{HOME.heroCta}</span>
-            <span className="absolute inset-0 bg-[#D4B062] -translate-x-full group-hover:translate-x-0 transition-transform duration-350 ease-out" />
+            <span className="absolute inset-0 bg-[#E8C4D0] -translate-x-full group-hover:translate-x-0 transition-transform duration-350 ease-out" />
           </Link>
           <Link
             href="/work"

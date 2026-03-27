@@ -80,7 +80,7 @@ export default function WorkGrid({ preview = false, category }: WorkGridProps) {
                   className={cn(
                     'font-body text-xs tracking-wider uppercase px-4 py-2 transition-all duration-250',
                     activeCategory === cat
-                      ? 'bg-[#B8963E] text-white'
+                      ? 'bg-[#D4A5B5] text-white'
                       : 'text-[#8C8279] hover:text-[#1C1C1A]'
                   )}
                 >
@@ -90,7 +90,7 @@ export default function WorkGrid({ preview = false, category }: WorkGridProps) {
               {preview && (
                 <Link
                   href="/work"
-                  className="font-body text-sm text-[#B8963E] hover:text-[#D4B062] transition-colors duration-250 hidden md:block"
+                  className="font-body text-sm text-[#D4A5B5] hover:text-[#E8C4D0] transition-colors duration-250 hidden md:block"
                 >
                   View all →
                 </Link>
@@ -145,7 +145,7 @@ export default function WorkGrid({ preview = false, category }: WorkGridProps) {
                     )}
 
                     {/* Hover overlay — dark + warm gold tint */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-[#B8963E]/10 group-hover:bg-gradient-to-t group-hover:from-[#1C1C1A]/50 transition-all duration-450 flex items-end justify-between p-4">
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-[#D4A5B5]/10 group-hover:bg-gradient-to-t group-hover:from-[#1C1C1A]/50 transition-all duration-450 flex items-end justify-between p-4">
                       <span className="font-accent text-[10px] text-white tracking-[0.25em] uppercase translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-250">
                         {item.category}
                       </span>
@@ -166,7 +166,7 @@ export default function WorkGrid({ preview = false, category }: WorkGridProps) {
             <div className="mt-12 flex justify-center md:hidden">
               <Link
                 href="/work"
-                className="font-body text-sm text-[#B8963E] border border-[#B8963E] px-6 py-3 hover:bg-[#B8963E] hover:text-white transition-all duration-250"
+                className="font-body text-sm text-[#D4A5B5] border border-[#D4A5B5] px-6 py-3 hover:bg-[#D4A5B5] hover:text-white transition-all duration-250"
               >
                 View All Work →
               </Link>

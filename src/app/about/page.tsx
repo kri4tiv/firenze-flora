@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <div key={t.id} className="bg-[#0A0A0A] p-10 flex flex-col">
                   <div className="flex gap-1 mb-6" aria-label={`${t.rating} stars`}>
                     {Array.from({ length: t.rating }).map((_, i) => (
-                      <span key={i} className="text-[#B8963E] text-sm" aria-hidden="true">★</span>
+                      <span key={i} className="text-[#D4A5B5] text-sm" aria-hidden="true">★</span>
                     ))}
                   </div>
                   <blockquote className="font-display text-xl italic text-[#F5F0E8]/80 leading-relaxed flex-1 mb-8">
@@ -65,14 +65,14 @@ export default function AboutPage() {
                   </blockquote>
                   <div className="flex items-center gap-3">
                     <div
-                      className="w-10 h-10 rounded-full bg-[#242424] border border-[#B8963E]/40 flex items-center justify-center shrink-0"
+                      className="w-10 h-10 rounded-full bg-[#242424] border border-[#D4A5B5]/40 flex items-center justify-center shrink-0"
                       aria-hidden="true"
                     >
-                      <span className="font-display text-base text-[#B8963E]">{initial}</span>
+                      <span className="font-display text-base text-[#D4A5B5]">{initial}</span>
                     </div>
                     <div>
                       <p className="font-body text-sm font-medium text-[#F5F0E8]">{t.author}</p>
-                      <p className="font-body text-xs text-[#B8963E] tracking-wide mt-0.5">{t.venue}</p>
+                      <p className="font-body text-xs text-[#D4A5B5] tracking-wide mt-0.5">{t.venue}</p>
                     </div>
                   </div>
                 </div>

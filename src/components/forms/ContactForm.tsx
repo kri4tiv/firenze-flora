@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { SITE } from '@/lib/content'
 
-const input = 'bg-[#141414] border border-[#242424] text-[#F5F0E8] placeholder:text-[#4A4540] px-4 py-3.5 w-full focus:outline-none focus:border-[#B8963E] transition-colors duration-200 font-body text-base'
+const input = 'bg-[#141414] border border-[#242424] text-[#F5F0E8] placeholder:text-[#4A4540] px-4 py-3.5 w-full focus:outline-none focus:border-[#D4A5B5] transition-colors duration-200 font-body text-base'
 
 export default function ContactForm() {
   const [name,    setName]    = useState('')
@@ -45,7 +45,7 @@ export default function ContactForm() {
       <button
         onClick={() => (name && email) && setSent(true)}
         disabled={!name || !email}
-        className="w-full py-4 bg-[#B8963E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#D4B062] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="w-full py-4 bg-[#D4A5B5] text-white font-body text-sm tracking-widest uppercase hover:bg-[#E8C4D0] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
       >
         Send Message
       </button>
