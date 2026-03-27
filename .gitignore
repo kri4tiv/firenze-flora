@@ -31,8 +31,7 @@ public/images/**/*.png
 !public/images/**/*.svg
 # Allow brand assets (logo)
 !public/images/brand/*.png
-public/videos/**/*.mp4
-public/videos/**/*.webm
+# public/videos are committed — do not ignore
 
 # IDE
 .vscode/

@@ -4,26 +4,36 @@ import Link from 'next/link'
 
 export default function HomepageHero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-end overflow-hidden bg-[#0A0A0A]">
-
-      {/* VIDEO BACKGROUND */}
+    <section
+      className="relative h-screen min-h-[600px] flex items-end overflow-hidden"
+      style={{ backgroundColor: '#1a0a0a' }}
+    >
+      {/* VIDEO */}
       <video
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        poster="/images/heroes/hero-weddings.webp"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 0 }}
       >
-        <source src="/videos/hero.webm" type="video/webm" />
         <source src="/videos/hero.mp4" type="video/mp4" />
+        <source src="/videos/hero.webm" type="video/webm" />
       </video>
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      {/* OVERLAY */}
+      <div
+        className="absolute inset-0 bg-black/50"
+        style={{ zIndex: 1 }}
+      />
 
       {/* CONTENT */}
-      <div className="relative z-20 px-6 md:px-16 lg:px-24 pb-20 md:pb-28 w-full max-w-5xl">
+      <div
+        className="relative w-full max-w-5xl px-6 md:px-16 lg:px-24 pb-20 md:pb-28"
+        style={{ zIndex: 2 }}
+      >
         <h1 className="font-display text-[clamp(3.6rem,8.8vw,8rem)] leading-[0.95] tracking-[-0.03em] text-white mb-6">
           Where flowers<br />
           <em>tell your story.</em>
@@ -33,12 +43,12 @@ export default function HomepageHero() {
         </p>
         <Link
           href="/enquire"
-          className="inline-block px-7 py-3.5 bg-[#D4A5B5] text-white text-sm tracking-widest uppercase hover:bg-[#E8C4D0] transition-colors duration-300"
+          className="inline-block px-7 py-3.5 text-sm tracking-widest uppercase text-white transition-colors duration-300"
+          style={{ backgroundColor: '#D4A5B5' }}
         >
           Enquire Now
         </Link>
       </div>
-
     </section>
   )
 }
