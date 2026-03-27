@@ -83,7 +83,7 @@ export default function EventsPage() {
       </section>
 
       {/* Event types */}
-      <TypeCards heading="Events we cover" cards={eventTypeCards} />
+      <TypeCards heading="Events we cover" cards={eventTypeCards} aspectRatio="aspect-[4/3]" splitAt={5} />
 
       {/* Gallery */}
       <section className="bg-[#0A0A0A] py-24">

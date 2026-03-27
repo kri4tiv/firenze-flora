@@ -81,7 +81,7 @@ export default function WeddingsPage() {
       </section>
 
       {/* Wedding types */}
-      <TypeCards heading="Weddings we specialise in" cards={weddingTypeCards} />
+      <TypeCards heading="Weddings we specialise in" cards={weddingTypeCards} aspectRatio="aspect-[4/3]" />
 
       {/* Gallery */}
       <section className="bg-[#0A0A0A] py-24">
