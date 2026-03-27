@@ -16,14 +16,24 @@ export default function HomepageHero() {
         preload="auto"
         poster="/images/heroes/hero-weddings.webp"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0, filter: 'blur(1.5px)' }}
+        style={{ zIndex: 0 }}
       >
-        <source src="https://res.cloudinary.com/dpnfzkl8n/video/upload/herovideo101_hghzzs.mp4" type="video/mp4" />
+        <source
+          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/sp_auto/herovideo101_hghzzs.m3u8"
+          type="application/x-mpegURL"
+        />
+        <source
+          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/vc_h264,q_auto:good/herovideo101_hghzzs.mp4"
+          type="video/mp4"
+        />
       </video>
 
       <div className="absolute inset-0 bg-black/45" style={{ zIndex: 1 }} />
 
-      <div className="relative w-full max-w-5xl px-6 md:px-16 lg:px-24 pb-20 md:pb-28" style={{ zIndex: 2 }}>
+      <div
+        className="relative w-full max-w-5xl px-6 md:px-16 lg:px-24 pb-20 md:pb-28"
+        style={{ zIndex: 2 }}
+      >
         <h1 className="font-display text-[clamp(3.6rem,8.8vw,8rem)] leading-[0.95] tracking-[-0.03em] text-white mb-6">
           Where flowers<br />
           <em>tell your story.</em>
