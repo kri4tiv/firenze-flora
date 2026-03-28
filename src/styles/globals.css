@@ -116,6 +116,19 @@ p { font-size: 1rem; line-height: 1.75; }
 ::-webkit-scrollbar-track { background: #0A0A0A; }
 ::-webkit-scrollbar-thumb { background: #242424; border-radius: 2px; }
 
+/* Date input: white calendar icon, dark theme */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+  opacity: 0.7;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+input[type="date"] {
+  color-scheme: dark;
+}
+
 /* Mobile improvements */
 @media (max-width: 640px) {
   /* Larger tap targets for interactive elements */

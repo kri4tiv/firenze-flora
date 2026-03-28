@@ -84,12 +84,16 @@ export default function EnquireForm() {
               </button>
             ))}
           </div>
-          <input
-            type="date"
-            value={data.eventDate}
-            onChange={e => update('eventDate', e.target.value)}
-            className={`${input} mb-4`}
-          />
+          <div className="relative mb-4">
+            <input
+              type="date"
+              value={data.eventDate}
+              onChange={(e) => update('eventDate', e.target.value)}
+              onClick={(e) => (e.target as HTMLInputElement).showPicker?.()}
+              className="w-full bg-[#141414] border border-[#242424] text-[#F5F0E8] text-base px-4 py-4 focus:outline-none focus:border-[#D4A5B5] transition-colors cursor-pointer"
+              style={{ colorScheme: 'dark' }}
+            />
+          </div>
           <textarea
             rows={3}
             placeholder="Tell us about your vision..."
