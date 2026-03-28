@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import HeroSection from '@/components/ui/HeroSection'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import WeddingTypesSection from '@/components/sections/WeddingTypesSection'
@@ -53,30 +53,50 @@ const galleryImages = [
 export default function WeddingsPage() {
   return (
     <>
-      <HeroSection
-        title="Weddings"
-        subtitle="From intimate ceremonies to grand celebrations. Every culture, every detail, flawlessly executed in Dubai."
-        imagePath="/images/heroes/hero-weddings.webp"
-        imageAlt="Wedding floral decor Dubai"
-      />
+      {/* FIX 2 — Combined hero + intro over one continuous image */}
+      <section className="relative overflow-hidden" style={{ minHeight: '80vh' }}>
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/heroes/hero-weddings.webp"
+            alt="Wedding floral decor Dubai"
+            fill
+            priority
+            quality={90}
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%)',
+            }}
+          />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
+        </div>
 
-      {/* Intro — FIX 6: cream-gold gradient */}
-      <section
-        className="relative py-24 overflow-hidden"
-        style={{
-          background: 'linear-gradient(180deg, rgba(20,16,12,0.95) 0%, rgba(45,35,20,0.90) 40%, rgba(212,185,120,0.15) 100%)',
-        }}
-      >
-        <div className="container-site max-w-2xl mx-auto text-center">
-          <p className="font-body text-lg text-[#B0A89E] leading-[1.85]">
-            Firenze Flora has been crafting wedding florals in Dubai for over 14 years. We work across all cultures
-            and styles, bringing the same level of precision and passion to every event, regardless of scale.
-            We import flowers directly from Holland to ensure every arrangement is fresh and distinctive.
-          </p>
+        {/* Hero title */}
+        <div className="relative z-10 flex items-center justify-center text-center pt-40 pb-16 px-6">
+          <div>
+            <h1 className="font-display text-display-lg text-[#F5F0E8]">Weddings</h1>
+            <p className="mt-4 text-lg text-[#F5F0E8]/80 max-w-xl mx-auto">
+              From intimate ceremonies to grand celebrations. Every culture, every detail, flawlessly executed in Dubai.
+            </p>
+          </div>
+        </div>
+
+        {/* Intro text — lower portion, same image continues */}
+        <div className="relative z-10 pb-24 px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="font-body text-lg text-[#F5F0E8]/80 leading-[1.85]">
+              Firenze Flora has been crafting wedding florals in Dubai for over 14 years. We work across all cultures
+              and styles — bringing the same level of precision and passion to every event, regardless of scale.
+              We import flowers directly from Holland to ensure every arrangement is fresh and distinctive.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Wedding types — FIX 7 & 8 */}
+      {/* Wedding types */}
       <WeddingTypesSection />
 
       {/* Gallery */}

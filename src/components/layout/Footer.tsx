@@ -14,7 +14,7 @@ export default function Footer() {
   const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`
 
   return (
-    <footer className="bg-[#0A0A0A] border-t border-[#242424]">
+    <footer className="relative z-10 bg-[#0A0A0A] border-t border-[#242424]">
       <div className="container-site py-20">
         {/* Main row */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-12">

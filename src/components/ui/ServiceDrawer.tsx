@@ -61,31 +61,52 @@ export default function ServiceDrawer({ open, onClose, title, image, content }: 
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 z-10 text-white/50 hover:text-white transition-colors"
+              className="absolute top-5 right-5 z-20 text-white/50 hover:text-white transition-colors"
               aria-label="Close"
             >
               <X size={24} />
             </button>
 
-            {/* Hero image */}
-            <div className="relative w-full aspect-video">
+            {/* Hero image — full quality, overlays handle blur + vignette */}
+            <div className="relative w-full aspect-video overflow-hidden">
               {image && (
                 <Image
                   src={image}
                   alt={title}
                   fill
+                  quality={90}
                   className="object-cover"
                   sizes="100vw"
+                  priority
                 />
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-transparent to-transparent" />
-              <h2 className="absolute bottom-6 left-8 font-display text-display-md text-white">{title}</h2>
+              {/* Blur via backdrop-filter, not on the image itself */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  backdropFilter: 'blur(2px)',
+                  WebkitBackdropFilter: 'blur(2px)',
+                }}
+              />
+              {/* Vignette */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%)',
+                }}
+              />
+              {/* Bottom gradient for text legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-black/30 to-transparent" />
+
+              {/* Title + intro centred over image */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-8 text-center">
+                <h2 className="font-display text-display-md text-white mb-4">{title}</h2>
+                <p className="text-base text-white/80 max-w-xl leading-relaxed">{content.intro}</p>
+              </div>
             </div>
 
-            {/* Content */}
+            {/* Content — 3 columns only, no intro repeat */}
             <div className="px-8 md:px-16 py-12 max-w-4xl mx-auto">
-              <p className="text-[#B0A89E] text-lg leading-relaxed mb-10">{content.intro}</p>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                   <h3 className="font-display text-xl text-[#F5F0E8] mb-4">What We Do</h3>
