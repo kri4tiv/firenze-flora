@@ -38,7 +38,7 @@ export default function Nav() {
         }`}
       >
         <div className="container-site flex items-center justify-between py-5">
-          {/* Logo — always white, colour on hover only */}
+          {/* Logo */}
           <Link href="/" className="shrink-0">
             <Image
               src="/images/brand/logo.png"
@@ -142,7 +142,7 @@ export default function Nav() {
                     <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className={`font-body text-2xl font-[300] tracking-wide block py-1.5 transition-colors duration-200 ${
+                      className={`font-body text-2xl font-[300] tracking-wide block py-3 transition-colors duration-200 ${
                         isActive ? 'text-[#D4A5B5]' : 'text-[#F5F0E8]/50 hover:text-[#F5F0E8]'
                       }`}
                     >

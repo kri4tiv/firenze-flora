@@ -70,6 +70,7 @@ export default function EventsPage() {
               background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.85) 100%)',
             }}
           />
+          <div className="absolute inset-0 bg-black/30" />
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
         </div>
 
@@ -86,10 +87,8 @@ export default function EventsPage() {
         {/* Intro text */}
         <div className="relative z-10 pb-24 px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="font-body text-lg text-[#F5F0E8]/80 leading-[1.85]">
-              Firenze Flora handles events of every scale, from intimate private gatherings to large-scale
-              corporate productions. Our team manages everything: concept, florals, decor, setup, and breakdown.
-              One call is all it takes.
+            <p className="font-body text-base md:text-lg text-[#F5F0E8]/80 leading-[1.85]">
+              Firenze Flora handles events of every scale. From intimate private gatherings to large-scale corporate productions, our team manages everything: concept, florals, decor, setup, and breakdown. One call is all it takes.
             </p>
           </div>
         </div>

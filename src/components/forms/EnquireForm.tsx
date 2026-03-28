@@ -69,7 +69,7 @@ export default function EnquireForm() {
 
       {step === 1 && (
         <div>
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
             {eventTypes.map(type => (
               <button
                 key={type}

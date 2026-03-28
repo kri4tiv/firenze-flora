@@ -32,9 +32,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 3. SERVICES — two cards ── */}
+      {/* 3. SERVICES: two cards */}
       <div className="flex flex-col md:flex-row">
-        {/* Card 1 — Weddings */}
+        {/* Card 1: Weddings */}
         <Link href="/weddings" className="relative flex-1 min-h-[70vh] group block overflow-hidden">
           <Image
             src="/images/heroes/hero-weddings.webp"
@@ -53,7 +53,7 @@ export default function HomePage() {
           </div>
         </Link>
 
-        {/* Card 2 — Events */}
+        {/* Card 2: Events */}
         <Link href="/events" className="relative flex-1 min-h-[70vh] group block overflow-hidden">
           <Image
             src="/images/heroes/hero-events.webp"

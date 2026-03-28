@@ -49,7 +49,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right — contact form */}
+          {/* Right: contact form */}
           <div>
             <ContactForm />
           </div>

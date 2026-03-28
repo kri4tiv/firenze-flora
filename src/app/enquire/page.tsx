@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function EnquirePage() {
   return (
     <>
-      {/* Fixed background — behind everything including footer */}
+      {/* Fixed background */}
       <div className="fixed inset-0 z-0">
         <Image
           src="/images/heroes/hero-enquire.webp"
@@ -29,7 +29,7 @@ export default function EnquirePage() {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Page content — flex column, min-h-screen pushes footer down */}
+      {/* Page content */}
       <div className="relative z-10 min-h-screen flex flex-col">
         <div className="flex-1 flex flex-col">
           <div className="pt-36 pb-12 text-center px-6">

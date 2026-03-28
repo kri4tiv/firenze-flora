@@ -98,7 +98,7 @@ export default function TypeCards({
           </h2>
         </div>
 
-        {/* Row 1 — full width */}
+        {/* Row 1: full width */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1">
           {row1.map((card, i) => {
             const isLastOdd = row1.length % 2 !== 0 && i === row1.length - 1
@@ -110,7 +110,7 @@ export default function TypeCards({
           })}
         </div>
 
-        {/* Row 2 — only when splitAt is set */}
+        {/* Row 2: only when splitAt is set */}
         {row2.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-1 mt-1 lg:px-[10%]">
             {row2.map((card, i) => {

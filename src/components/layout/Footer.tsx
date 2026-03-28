@@ -31,7 +31,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Center — nav links */}
+          {/* Center: nav links */}
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             {navLinks.map((link, i) => (
               <span key={link.href} className="flex items-center gap-3">
@@ -98,7 +98,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://twitter.com/firenzeflora"
+                href="https://x.com/firenzeflora1"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter / X"

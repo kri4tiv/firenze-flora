@@ -84,7 +84,7 @@ export default function Hero() {
           })}
         </motion.svg>
 
-        {/* VIDEO PLACEHOLDER — swap when AI cinematic is ready:
+        {/* VIDEO PLACEHOLDER: swap when AI cinematic is ready:
           <video autoPlay muted loop playsInline poster="/images/hero/hero-poster.webp"
             className="absolute inset-0 w-full h-full object-cover">
             <source src="/videos/hero.mp4" type="video/mp4" />

@@ -37,7 +37,7 @@ export default function HomepageHero() {
           type="application/x-mpegURL"
         />
         <source
-          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/vc_h264,q_auto:good,w_1280/herovideo101_hghzzs.mp4"
+          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/vc_h264,q_auto:eco,w_854/herovideo101_hghzzs.mp4"
           media="(max-width: 768px)"
           type="video/mp4"
         />
@@ -47,7 +47,7 @@ export default function HomepageHero() {
         />
       </video>
 
-      {/* Vignette — darkens corners, keeps centre clear */}
+      {/* Vignette */}
       <div
         className="absolute inset-0"
         style={{
@@ -67,7 +67,7 @@ export default function HomepageHero() {
         }}
       />
 
-      {/* Content — bottom-left */}
+      {/* Content: bottom-left */}
       <div
         className="relative w-full px-8 md:px-12 lg:px-16 pb-10 md:pb-14"
         style={{ zIndex: 3 }}
@@ -81,8 +81,7 @@ export default function HomepageHero() {
         </p>
         <Link
           href="/enquire"
-          className="inline-block px-7 py-3.5 text-sm tracking-widest uppercase text-white transition-colors duration-300"
-          style={{ backgroundColor: '#D4A5B5' }}
+          className="inline-block w-full md:w-auto px-7 py-3.5 text-sm tracking-widest uppercase bg-[#D4A5B5] text-white hover:bg-[#E8C4D0] hover:text-black transition-all duration-300 text-center"
         >
           Enquire Now
         </Link>

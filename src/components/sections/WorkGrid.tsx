@@ -144,7 +144,7 @@ export default function WorkGrid({ preview = false, category }: WorkGridProps) {
                       />
                     )}
 
-                    {/* Hover overlay — dark + warm gold tint */}
+                    {/* Hover overlay */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-[#D4A5B5]/10 group-hover:bg-gradient-to-t group-hover:from-[#1C1C1A]/50 transition-all duration-450 flex items-end justify-between p-4">
                       <span className="font-accent text-[10px] text-white tracking-[0.25em] uppercase translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-250">
                         {item.category}

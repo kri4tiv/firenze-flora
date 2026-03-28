@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import HeroSection from '@/components/ui/HeroSection'
 import StatsStrip from '@/components/sections/StatsStrip'
 import CTAStrip from '@/components/sections/CTAStrip'
 import TeamGrid from '@/components/sections/TeamGrid'
@@ -14,31 +13,44 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <HeroSection
-        title="About"
-        subtitle="14 years. 5,000+ events. One obsession."
-        imagePath="/images/heroes/hero-about.webp"
-        imageAlt="Firenze Flora team Dubai"
-      />
+      {/* Combined hero + brand story */}
+      <section className="relative overflow-hidden" style={{ minHeight: '90vh' }}>
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/heroes/hero-about.webp"
+            alt="Firenze Flora studio Dubai"
+            fill
+            priority
+            quality={90}
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.88) 100%)',
+            }}
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
+        </div>
 
-      {/* Brand story — 2 col */}
-      <section className="bg-[#141414] py-24">
-        <div className="container-site">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="space-y-7">
-              {ABOUT.body.map((para, i) => (
-                <p key={i} className="font-body text-lg text-[#C8BFB8] leading-[1.9]">{para}</p>
-              ))}
-            </div>
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <Image
-                src="/images/about/about-page2.webp"
-                alt="Firenze Flora studio Dubai"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
+        <div className="relative z-10 flex items-center justify-center text-center pt-40 pb-16 px-6">
+          <div>
+            <h1 className="font-display text-display-md md:text-display-lg text-[#F5F0E8]">About</h1>
+            <p className="mt-4 text-lg text-[#F5F0E8]/80 max-w-xl mx-auto italic font-display">
+              14 years. 5,000+ events. One obsession.
+            </p>
+          </div>
+        </div>
+
+        <div className="relative z-10 pb-28 px-6">
+          <div className="max-w-2xl mx-auto">
+            {ABOUT.body.map((para: string, i: number) => (
+              <p key={i} className="font-body text-base md:text-lg text-[#F5F0E8]/80 leading-[1.85] mb-6">
+                {para}
+              </p>
+            ))}
           </div>
         </div>
       </section>

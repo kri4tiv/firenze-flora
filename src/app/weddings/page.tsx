@@ -53,7 +53,7 @@ const galleryImages = [
 export default function WeddingsPage() {
   return (
     <>
-      {/* FIX 2 — Combined hero + intro over one continuous image */}
+      {/* Combined hero + intro */}
       <section className="relative overflow-hidden" style={{ minHeight: '80vh' }}>
         <div className="absolute inset-0 z-0">
           <Image
@@ -71,7 +71,7 @@ export default function WeddingsPage() {
               background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.85) 100%)',
             }}
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/30" />
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
         </div>
 
@@ -85,7 +85,7 @@ export default function WeddingsPage() {
           </div>
         </div>
 
-        {/* Intro text — lower portion, same image continues */}
+        {/* Intro text */}
         <div className="relative z-10 pb-24 px-6">
           <div className="max-w-2xl mx-auto text-center">
             <p className="font-body text-lg text-[#F5F0E8]/80 leading-[1.85]">

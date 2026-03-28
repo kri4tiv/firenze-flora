@@ -68,7 +68,7 @@ export default function ServiceDrawer({ open, onClose, title, image, content }: 
             </button>
 
             {/* Hero image */}
-            <div className="relative w-full aspect-video max-h-[40vh] overflow-hidden">
+            <div className="relative w-full aspect-video max-h-[45vh] overflow-hidden">
               {image && (
                 <Image
                   src={image}
@@ -98,40 +98,40 @@ export default function ServiceDrawer({ open, onClose, title, image, content }: 
               {/* Bottom gradient for text legibility */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-black/30 to-transparent" />
 
-              {/* Title centred over image — intro shown below on mobile, here on desktop */}
+              {/* Title centred over image */}
               <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-8 text-center">
-                <h2 className="font-display text-2xl md:text-display-md text-white mb-3">{title}</h2>
+                <h2 className="font-display text-display-sm md:text-display-md text-white mb-3">{title}</h2>
                 <p className="hidden md:block text-base text-white/80 max-w-xl leading-relaxed">{content.intro}</p>
               </div>
             </div>
 
             {/* Content */}
-            <div className="px-6 md:px-16 pt-8 pb-12 max-w-4xl mx-auto">
+            <div className="px-5 md:px-8 lg:px-16 pt-8 pb-12 max-w-4xl mx-auto">
               {/* Intro visible on mobile only */}
               <p className="md:hidden text-base text-[#B0A89E] leading-relaxed mb-8">{content.intro}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div>
-                  <h3 className="font-display text-2xl text-[#F5F0E8] mb-4">What We Do</h3>
+                  <h3 className="font-display text-xl md:text-2xl text-[#F5F0E8] mb-4">What We Do</h3>
                   <ul className="space-y-2">
                     {content.whatWeDo.map(item => (
-                      <li key={item} className="text-base text-[#8C8279] leading-relaxed">{item}</li>
+                      <li key={item} className="text-sm md:text-base text-[#8C8279] leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-display text-2xl text-[#F5F0E8] mb-4">Florals</h3>
+                  <h3 className="font-display text-xl md:text-2xl text-[#F5F0E8] mb-4">Florals</h3>
                   <ul className="space-y-2">
                     {content.florals.map(item => (
-                      <li key={item} className="text-base text-[#8C8279] leading-relaxed">{item}</li>
+                      <li key={item} className="text-sm md:text-base text-[#8C8279] leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-display text-2xl text-[#F5F0E8] mb-4">Setup</h3>
+                  <h3 className="font-display text-xl md:text-2xl text-[#F5F0E8] mb-4">Setup</h3>
                   <ul className="space-y-2">
                     {content.setup.map(item => (
-                      <li key={item} className="text-base text-[#8C8279] leading-relaxed">{item}</li>
+                      <li key={item} className="text-sm md:text-base text-[#8C8279] leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
