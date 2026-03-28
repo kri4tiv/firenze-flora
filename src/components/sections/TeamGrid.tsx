@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { motion, LazyMotion, domAnimation } from 'framer-motion'
 
 const team = [
-  { name: 'Laxman',  role: 'CEO',                image: '/images/team/laxman.webp' },
-  { name: 'Ranbir',  role: 'Operations Head',     image: '/images/team/ranbir.webp' },
-  { name: 'Sanjay',  role: 'Event Consultant',    image: '/images/team/sanjay.webp' },
-  { name: 'Gulrukh', role: 'IT & Marketing',      image: '/images/team/gulrukh.webp' },
-  { name: 'Monila',  role: 'Wedding Consultant',  image: '/images/team/monila.webp' },
+  { name: 'Laxman',  role: 'CEO',                image: '/images/team/laxman-v2.webp' },
+  { name: 'Ranbir',  role: 'Operations Head',     image: '/images/team/ranbir-v2.webp' },
+  { name: 'Sanjay',  role: 'Event Consultant',    image: '/images/team/sanjay-v2.webp' },
+  { name: 'Gulrukh', role: 'IT & Marketing',      image: '/images/team/gulrukh-v2.webp' },
+  { name: 'Monila',  role: 'Wedding Consultant',  image: '/images/team/monila-v2.webp' },
   { name: 'JP',      role: 'Sales Manager',       image: '/images/team/jp.webp' },
 ]
 

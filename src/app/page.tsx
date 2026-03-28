@@ -116,7 +116,7 @@ export default function HomePage() {
             </Link>
             <a
               href={`tel:${SITE.phoneTel}`}
-              className="border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-[#0A0A0A] transition-colors"
+              className="border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
             >
               Call {SITE.phoneDisplay}
             </a>
