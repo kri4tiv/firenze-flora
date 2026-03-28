@@ -15,16 +15,16 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#0A0A0A] border-t border-[#242424]">
-      <div className="container-site py-16">
+      <div className="container-site py-20">
         {/* Main row */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-12">
           {/* Left */}
           <div>
             <Image
               src="/images/brand/logo.png"
               alt="Firenze Flora"
               height={40} width={120}
-              className="h-10 w-auto object-contain brightness-0 invert opacity-70"
+              className="h-12 w-auto object-contain brightness-0 invert opacity-70"
             />
             <p className="text-sm text-[#8C8279] mt-4 leading-relaxed max-w-[200px]">
               {SITE.address}
@@ -113,7 +113,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="border-t border-[#242424] mt-12 pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+        <div className="border-t border-[#242424] mt-16 pt-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
           <p className="text-xs text-[#8C8279]/60">© {year} Firenze Flora. All rights reserved.</p>
           <p className="text-xs text-[#8C8279]/60">Dubai, United Arab Emirates</p>
         </div>

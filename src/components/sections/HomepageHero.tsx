@@ -20,6 +20,7 @@ export default function HomepageHero() {
       className="relative h-screen min-h-[600px] flex items-end overflow-hidden"
       style={{ backgroundColor: '#111' }}
     >
+      {/* Video */}
       <video
         ref={videoRef}
         autoPlay
@@ -41,11 +42,30 @@ export default function HomepageHero() {
         />
       </video>
 
-      <div className="absolute inset-0 bg-black/45" style={{ zIndex: 1 }} />
-
+      {/* Vignette — darkens corners, keeps centre clear */}
       <div
-        className="relative w-full max-w-5xl px-6 md:px-16 lg:px-24 pb-20 md:pb-28"
-        style={{ zIndex: 2 }}
+        className="absolute inset-0"
+        style={{
+          zIndex: 1,
+          background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%)',
+        }}
+      />
+
+      {/* Film grain */}
+      <div
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
+        style={{
+          zIndex: 2,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '200px 200px',
+        }}
+      />
+
+      {/* Content — bottom-left */}
+      <div
+        className="relative w-full px-8 md:px-12 lg:px-16 pb-10 md:pb-14"
+        style={{ zIndex: 3 }}
       >
         <h1 className="font-display text-[clamp(3.6rem,8.8vw,8rem)] leading-[0.95] tracking-[-0.03em] text-white mb-6">
           Where flowers<br />

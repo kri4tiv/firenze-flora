@@ -77,7 +77,7 @@ export default function EnquireForm() {
                 className={`border px-4 py-2.5 text-sm font-body transition-all duration-200 ${
                   data.eventType === type
                     ? 'border-[#D4A5B5] text-[#F5F0E8] bg-[#D4A5B5]/10'
-                    : 'border-[#242424] text-[#8C8279] hover:border-[#D4A5B5] hover:text-[#F5F0E8]'
+                    : 'border-[#242424] bg-[#0A0A0A] text-white hover:border-[#D4A5B5]'
                 }`}
               >
                 {type}

@@ -32,7 +32,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/about/about-intro.webp"
+                src="/images/about/about-page2.webp"
                 alt="Firenze Flora studio Dubai"
                 fill
                 className="object-cover"

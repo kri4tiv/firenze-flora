@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import HeroSection from '@/components/ui/HeroSection'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
-import TypeCards from '@/components/sections/TypeCards'
+import EventTypesSection from '@/components/sections/EventTypesSection'
 
 const Lightbox = dynamic(() => import('@/components/gallery/Lightbox'), {
   loading: () => <div className="w-full h-64 bg-[#141414] animate-pulse" />,
@@ -14,18 +14,6 @@ export const metadata: Metadata = {
   title: 'Events | Premium Event Decor in Dubai | Firenze Flora',
   description: 'Corporate, private, and brand event decor in Dubai. Birthday parties, anniversaries, corporate galas, openings. Creative concept, flawless setup.',
 }
-
-const eventTypeCards = [
-  { name: 'Private Parties',       image: '/images/type-cards/events-private.webp' },
-  { name: 'Corporate Events',      image: '/images/type-cards/events-corporate.webp' },
-  { name: 'Brand Activations',     image: '/images/type-cards/events-brand.webp' },
-  { name: 'Product Launches',      image: '/images/type-cards/events-product-launches.webp' },
-  { name: 'Openings & Ceremonies', image: '/images/type-cards/events-opening.webp' },
-  { name: 'Birthdays',             image: '/images/type-cards/events-birthdays.webp' },
-  { name: 'Anniversaries',         image: '/images/type-cards/events-anniversary.webp' },
-  { name: 'Baby Showers',          image: '/images/type-cards/events-babyshower.webp' },
-  { name: 'Proposals',             image: '/images/type-cards/events-proposals.webp' },
-]
 
 const faqs = [
   {
@@ -82,8 +70,8 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Event types */}
-      <TypeCards heading="Events we cover" cards={eventTypeCards} aspectRatio="aspect-[4/3]" splitAt={5} />
+      {/* Event types — FIX 9 & 10 */}
+      <EventTypesSection />
 
       {/* Gallery */}
       <section className="bg-[#0A0A0A] py-24">
