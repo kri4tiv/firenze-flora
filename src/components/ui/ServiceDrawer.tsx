@@ -52,7 +52,7 @@ export default function ServiceDrawer({ open, onClose, title, image, content }: 
           {/* Drawer panel */}
           <motion.div
             className="fixed bottom-0 left-0 right-0 z-[60] bg-[#0F0F0F] overflow-y-auto"
-            style={{ maxHeight: '90vh' }}
+            style={{ maxHeight: '95vh' }}
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
@@ -67,8 +67,8 @@ export default function ServiceDrawer({ open, onClose, title, image, content }: 
               <X size={24} />
             </button>
 
-            {/* Hero image — full quality, overlays handle blur + vignette */}
-            <div className="relative w-full aspect-video overflow-hidden">
+            {/* Hero image */}
+            <div className="relative w-full aspect-video max-h-[40vh] overflow-hidden">
               {image && (
                 <Image
                   src={image}
@@ -98,46 +98,49 @@ export default function ServiceDrawer({ open, onClose, title, image, content }: 
               {/* Bottom gradient for text legibility */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-black/30 to-transparent" />
 
-              {/* Title + intro centred over image */}
+              {/* Title centred over image — intro shown below on mobile, here on desktop */}
               <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-8 text-center">
-                <h2 className="font-display text-display-md text-white mb-4">{title}</h2>
-                <p className="text-base text-white/80 max-w-xl leading-relaxed">{content.intro}</p>
+                <h2 className="font-display text-2xl md:text-display-md text-white mb-3">{title}</h2>
+                <p className="hidden md:block text-base text-white/80 max-w-xl leading-relaxed">{content.intro}</p>
               </div>
             </div>
 
-            {/* Content — 3 columns only, no intro repeat */}
-            <div className="px-8 md:px-16 py-12 max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Content */}
+            <div className="px-6 md:px-16 pt-8 pb-12 max-w-4xl mx-auto">
+              {/* Intro visible on mobile only */}
+              <p className="md:hidden text-base text-[#B0A89E] leading-relaxed mb-8">{content.intro}</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div>
-                  <h3 className="font-display text-xl text-[#F5F0E8] mb-4">What We Do</h3>
+                  <h3 className="font-display text-2xl text-[#F5F0E8] mb-4">What We Do</h3>
                   <ul className="space-y-2">
                     {content.whatWeDo.map(item => (
-                      <li key={item} className="text-sm text-[#8C8279]">{item}</li>
+                      <li key={item} className="text-base text-[#8C8279] leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl text-[#F5F0E8] mb-4">Florals</h3>
+                  <h3 className="font-display text-2xl text-[#F5F0E8] mb-4">Florals</h3>
                   <ul className="space-y-2">
                     {content.florals.map(item => (
-                      <li key={item} className="text-sm text-[#8C8279]">{item}</li>
+                      <li key={item} className="text-base text-[#8C8279] leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl text-[#F5F0E8] mb-4">Setup</h3>
+                  <h3 className="font-display text-2xl text-[#F5F0E8] mb-4">Setup</h3>
                   <ul className="space-y-2">
                     {content.setup.map(item => (
-                      <li key={item} className="text-sm text-[#8C8279]">{item}</li>
+                      <li key={item} className="text-base text-[#8C8279] leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <div className="mt-12 pt-8 border-t border-[#242424] flex flex-col sm:flex-row gap-4">
+              <div className="mt-10 pt-8 border-t border-[#242424] flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/enquire"
-                  className="px-6 py-3 bg-[#D4A5B5] text-white text-sm tracking-widest uppercase hover:bg-[#E8C4D0] transition-colors text-center"
+                  className="w-full sm:w-auto px-6 py-3 bg-[#D4A5B5] text-white text-sm tracking-widest uppercase hover:bg-[#E8C4D0] transition-colors text-center"
                 >
                   Enquire About This
                 </Link>
@@ -145,7 +148,7 @@ export default function ServiceDrawer({ open, onClose, title, image, content }: 
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 border border-[#242424] text-[#8C8279] text-sm tracking-widest uppercase hover:border-[#D4A5B5] hover:text-[#D4A5B5] transition-colors text-center"
+                  className="w-full sm:w-auto px-6 py-3 border border-[#242424] text-[#8C8279] text-sm tracking-widest uppercase hover:border-[#D4A5B5] hover:text-[#D4A5B5] transition-colors text-center"
                 >
                   WhatsApp
                 </a>

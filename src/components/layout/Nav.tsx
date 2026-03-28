@@ -81,7 +81,7 @@ export default function Nav() {
           <button
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
-            className="md:hidden flex flex-col justify-center gap-[5px] p-2"
+            className="md:hidden flex flex-col justify-center gap-[5px] w-11 h-11 items-center"
           >
             <span className="block w-5 h-px bg-[#F5F0E8]" />
             <span className="block w-5 h-px bg-[#F5F0E8]" />

@@ -100,17 +100,27 @@ export default function TypeCards({
 
         {/* Row 1 — full width */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1">
-          {row1.map((card, i) => (
-            <CardItem key={card.name} card={card} index={i} aspectRatio={aspectRatio} onCardClick={onCardClick} />
-          ))}
+          {row1.map((card, i) => {
+            const isLastOdd = row1.length % 2 !== 0 && i === row1.length - 1
+            return (
+              <div key={card.name} className={isLastOdd ? 'col-span-2 md:col-span-1' : ''}>
+                <CardItem card={card} index={i} aspectRatio={aspectRatio} onCardClick={onCardClick} />
+              </div>
+            )
+          })}
         </div>
 
         {/* Row 2 — only when splitAt is set */}
         {row2.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-1 mt-1 lg:px-[10%]">
-            {row2.map((card, i) => (
-              <CardItem key={card.name} card={card} index={row1.length + i} aspectRatio={aspectRatio} onCardClick={onCardClick} />
-            ))}
+            {row2.map((card, i) => {
+              const isLastOdd = row2.length % 2 !== 0 && i === row2.length - 1
+              return (
+                <div key={card.name} className={isLastOdd ? 'col-span-2 md:col-span-1' : ''}>
+                  <CardItem card={card} index={row1.length + i} aspectRatio={aspectRatio} onCardClick={onCardClick} />
+                </div>
+              )
+            })}
           </div>
         )}
       </section>

@@ -18,7 +18,7 @@ const items = [
   },
   {
     title: 'Arabic Weddings Decoration',
-    body: 'Arabic weddings carry centuries of cultural tradition — and our team understands every nuance. We specialise in elegant floral designs that honour Arabic aesthetic sensibilities, from grand reception halls adorned with cascading florals to intimate ceremony spaces that balance tradition and modernity. Each arrangement is crafted to complement the grandeur of your celebration.',
+    body: 'Arabic weddings carry centuries of cultural tradition, and our team understands every nuance. We specialise in elegant floral designs that honour Arabic aesthetic sensibilities, from grand reception halls adorned with cascading florals to intimate ceremony spaces that balance tradition and modernity. Each arrangement is crafted to complement the grandeur of your celebration.',
   },
   {
     title: 'Indian Wedding Decoration',
@@ -26,15 +26,15 @@ const items = [
   },
   {
     title: 'Flower Arrangements in Dubai',
-    body: 'Our flower arrangements go beyond decoration — they are compositions crafted to evoke emotion and elevate space. Whether for a corporate reception, a private home, or a grand event venue, Firenze Flora designs arrangements that balance colour, texture, and proportion with an editorial eye. We work with fresh flowers imported from premium global sources for maximum impact and longevity.',
+    body: 'Our flower arrangements go beyond decoration. They are compositions crafted to evoke emotion and elevate space. Whether for a corporate reception, a private home, or a grand event venue, Firenze Flora designs arrangements that balance colour, texture, and proportion with an editorial eye. We work with fresh flowers imported from premium global sources for maximum impact and longevity.',
   },
   {
     title: 'Bridal Bouquet',
-    body: 'The bridal bouquet is one of the most personal elements of your wedding day — a handcrafted piece carried through every photograph and memory. Our designers work closely with each bride to understand her style, colour palette, and the flowers that resonate with her story. From cascading garden rose arrangements to compact, structured bouquets in rare seasonal blooms, each piece is assembled the morning of the wedding for maximum freshness.',
+    body: 'The bridal bouquet is one of the most personal elements of your wedding day, a handcrafted piece carried through every photograph and memory. Our designers work closely with each bride to understand her style, colour palette, and the flowers that resonate with her story. From cascading garden rose arrangements to compact, structured bouquets in rare seasonal blooms, each piece is assembled the morning of the wedding for maximum freshness.',
   },
   {
     title: 'Wedding Centrepieces in Dubai',
-    body: 'Table centrepieces set the tone for your entire reception. Firenze Flora designs centrepieces that anchor the visual experience of your event — from tall, dramatic floral towers to low, lush arrangements that encourage conversation. We work in a range of vessels, from antique brass and oxidised silver to clean acrylic and mirrored bases, ensuring the presentation is as refined as the flowers themselves.',
+    body: 'Table centrepieces set the tone for your entire reception. Firenze Flora designs centrepieces that anchor the visual experience of your event, from tall, dramatic floral towers to low, lush arrangements that encourage conversation. We work in a range of vessels, from antique brass and oxidised silver to clean acrylic and mirrored bases, ensuring the presentation is as refined as the flowers themselves.',
   },
 ]
 

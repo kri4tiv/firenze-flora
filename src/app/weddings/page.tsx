@@ -68,16 +68,17 @@ export default function WeddingsPage() {
           <div
             className="absolute inset-0"
             style={{
-              background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%)',
+              background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.85) 100%)',
             }}
           />
+          <div className="absolute inset-0 bg-black/20" />
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
         </div>
 
         {/* Hero title */}
         <div className="relative z-10 flex items-center justify-center text-center pt-40 pb-16 px-6">
           <div>
-            <h1 className="font-display text-display-lg text-[#F5F0E8]">Weddings</h1>
+            <h1 className="font-display text-display-md md:text-display-lg text-[#F5F0E8]">Weddings</h1>
             <p className="mt-4 text-lg text-[#F5F0E8]/80 max-w-xl mx-auto">
               From intimate ceremonies to grand celebrations. Every culture, every detail, flawlessly executed in Dubai.
             </p>
@@ -89,7 +90,7 @@ export default function WeddingsPage() {
           <div className="max-w-2xl mx-auto text-center">
             <p className="font-body text-lg text-[#F5F0E8]/80 leading-[1.85]">
               Firenze Flora has been crafting wedding florals in Dubai for over 14 years. We work across all cultures
-              and styles — bringing the same level of precision and passion to every event, regardless of scale.
+              and styles, bringing the same level of precision and passion to every event, regardless of scale.
               We import flowers directly from Holland to ensure every arrangement is fresh and distinctive.
             </p>
           </div>

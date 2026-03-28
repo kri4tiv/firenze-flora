@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import HeroSection from '@/components/ui/HeroSection'
 import CTAStrip from '@/components/sections/CTAStrip'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import EventTypesSection from '@/components/sections/EventTypesSection'
@@ -52,25 +52,50 @@ const galleryImages = [
 export default function EventsPage() {
   return (
     <>
-      <HeroSection
-        title="Events"
-        subtitle="Corporate galas, private celebrations, brand activations. We bring every event to life."
-        imagePath="/images/heroes/hero-events.webp"
-        imageAlt="Event decor Dubai"
-      />
+      {/* Combined hero + intro over one continuous image */}
+      <section className="relative overflow-hidden" style={{ minHeight: '80vh' }}>
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/heroes/hero-events.webp"
+            alt="Event decor Dubai"
+            fill
+            priority
+            quality={90}
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.85) 100%)',
+            }}
+          />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
+        </div>
 
-      {/* Intro */}
-      <section className="bg-[#0A0A0A] py-24">
-        <div className="container-site max-w-2xl mx-auto text-center">
-          <p className="font-body text-lg text-[#B0A89E] leading-[1.85]">
-            Firenze Flora handles events of every scale, from intimate private gatherings to large-scale
-            corporate productions. Our team manages everything: concept, florals, decor, setup, and breakdown.
-            One call is all it takes.
-          </p>
+        {/* Hero title */}
+        <div className="relative z-10 flex items-center justify-center text-center pt-40 pb-16 px-6">
+          <div>
+            <h1 className="font-display text-display-md md:text-display-lg text-[#F5F0E8]">Events</h1>
+            <p className="mt-4 text-lg text-[#F5F0E8]/80 max-w-xl mx-auto">
+              Corporate galas, private celebrations, brand activations. We bring every event to life.
+            </p>
+          </div>
+        </div>
+
+        {/* Intro text */}
+        <div className="relative z-10 pb-24 px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="font-body text-lg text-[#F5F0E8]/80 leading-[1.85]">
+              Firenze Flora handles events of every scale, from intimate private gatherings to large-scale
+              corporate productions. Our team manages everything: concept, florals, decor, setup, and breakdown.
+              One call is all it takes.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Event types — FIX 9 & 10 */}
+      {/* Event types */}
       <EventTypesSection />
 
       {/* Gallery */}

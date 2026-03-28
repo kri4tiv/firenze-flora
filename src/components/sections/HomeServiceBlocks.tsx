@@ -46,7 +46,7 @@ const blocks = [
       },
       {
         title: 'Birthday Party',
-        desc: 'Charming centrepieces to statement installations — atmospheres where wishes come true.',
+        desc: 'Charming centrepieces to statement installations, creating atmospheres where wishes come true.',
         src: '/images/portfolio/arabic-wedding/arabic-wedding-05.webp', seed: 65,
       },
       {
@@ -62,7 +62,7 @@ const blocks = [
     title: 'CORPORATE',
     heroImage: '/images/portfolio/flower-arch/flower-arch-03.webp',
     heroSeed: 33,
-    description: 'Decor is the visual language of your brand — shaping a memorable and impactful experience for clients, partners, and employees.',
+    description: 'Decor is the visual language of your brand, shaping a memorable and impactful experience for clients, partners, and employees.',
     items: [
       {
         title: 'Branded Flower Wall',

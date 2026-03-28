@@ -69,12 +69,12 @@ export default function EnquireForm() {
 
       {step === 1 && (
         <div>
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 mb-8">
             {eventTypes.map(type => (
               <button
                 key={type}
                 onClick={() => update('eventType', type)}
-                className={`border px-4 py-2.5 text-sm font-body transition-all duration-200 ${
+                className={`border px-4 py-3 text-sm font-body transition-all duration-200 ${
                   data.eventType === type
                     ? 'border-[#D4A5B5] text-[#F5F0E8] bg-[#D4A5B5]/10'
                     : 'border-[#242424] bg-[#0A0A0A] text-white hover:border-[#D4A5B5]'

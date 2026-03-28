@@ -27,7 +27,7 @@ export default function HomepageHero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         poster="/images/heroes/hero-weddings.webp"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ zIndex: 0 }}
@@ -35,6 +35,11 @@ export default function HomepageHero() {
         <source
           src="https://res.cloudinary.com/dpnfzkl8n/video/upload/sp_auto/herovideo101_hghzzs.m3u8"
           type="application/x-mpegURL"
+        />
+        <source
+          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/vc_h264,q_auto:good,w_1280/herovideo101_hghzzs.mp4"
+          media="(max-width: 768px)"
+          type="video/mp4"
         />
         <source
           src="https://res.cloudinary.com/dpnfzkl8n/video/upload/vc_h264,q_auto:good/herovideo101_hghzzs.mp4"
@@ -67,11 +72,11 @@ export default function HomepageHero() {
         className="relative w-full px-8 md:px-12 lg:px-16 pb-10 md:pb-14"
         style={{ zIndex: 3 }}
       >
-        <h1 className="font-display text-[clamp(3.6rem,8.8vw,8rem)] leading-[0.95] tracking-[-0.03em] text-white mb-6">
+        <h1 className="font-display text-[clamp(2.8rem,8.8vw,8rem)] leading-[0.95] tracking-[-0.03em] text-white mb-5 md:mb-6">
           Where flowers<br />
           <em>tell your story.</em>
         </h1>
-        <p className="text-base text-white/70 mb-10 max-w-sm">
+        <p className="text-sm md:text-base text-white/70 mb-8 md:mb-10 max-w-sm">
           Premium floral and event decor. Dubai.
         </p>
         <Link
