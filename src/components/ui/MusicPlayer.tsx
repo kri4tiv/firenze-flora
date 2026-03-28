@@ -54,12 +54,12 @@ export default function MusicPlayer() {
       onClick={toggle}
       aria-label={muted ? 'Unmute background music' : 'Mute background music'}
       title={muted ? 'Unmute music' : 'Mute music'}
-      className="fixed top-5 right-5 z-50 w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300"
+      className={`fixed top-5 right-5 z-50 w-10 h-10 flex items-center justify-center rounded-full transition-all duration-500 ${!muted ? 'music-playing' : ''}`}
       style={{
         backgroundColor: 'rgba(255,255,255,0.08)',
         backdropFilter: 'blur(8px)',
         WebkitBackdropFilter: 'blur(8px)',
-        border: '1px solid rgba(255,255,255,0.15)',
+        border: muted ? '1px solid rgba(255,255,255,0.15)' : '1px solid rgba(212, 165, 181, 0.8)',
       }}
     >
       {muted ? (
