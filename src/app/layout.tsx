@@ -6,6 +6,7 @@ import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/ui/WhatsAppButton'
 import CustomCursor from '@/components/ui/CustomCursor'
 import PageLoader from '@/components/ui/PageLoader'
+import MusicPlayer from '@/components/ui/MusicPlayer'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -77,6 +78,7 @@ export default function RootLayout({
         <PageLoader />
         <CustomCursor />
         <Nav />
+        <MusicPlayer />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
