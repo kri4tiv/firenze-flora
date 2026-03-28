@@ -9,7 +9,7 @@ const team = [
   { name: 'Sanjay',  role: 'Event Consultant',    image: '/images/team/sanjay-v2.webp' },
   { name: 'Gulrukh', role: 'IT & Marketing',      image: '/images/team/gulrukh-v2.webp' },
   { name: 'Monila',  role: 'Wedding Consultant',  image: '/images/team/monila-v2.webp' },
-  { name: 'JP',      role: 'Sales Manager',       image: '/images/team/jp.webp' },
+  { name: 'JP',      role: 'Sales Manager',       image: '/images/team/jp-v2.webp' },
 ]
 
 const photoVariants = {

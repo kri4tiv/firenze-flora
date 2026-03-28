@@ -33,16 +33,7 @@ export default function HomepageHero() {
         style={{ zIndex: 0 }}
       >
         <source
-          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/sp_auto/herovideo101_hghzzs.m3u8"
-          type="application/x-mpegURL"
-        />
-        <source
-          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/vc_h264,q_auto:eco,w_854/herovideo101_hghzzs.mp4"
-          media="(max-width: 768px)"
-          type="video/mp4"
-        />
-        <source
-          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/vc_h264,q_auto:good/herovideo101_hghzzs.mp4"
+          src="https://res.cloudinary.com/dpnfzkl8n/video/upload/vc_h264,q_auto:best/herovideo101_hghzzs.mp4"
           type="video/mp4"
         />
       </video>
